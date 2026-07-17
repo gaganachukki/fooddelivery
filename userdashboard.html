@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Dashboard | Stackly</title>
+    <link rel="stylesheet" href="css/userdashboard.css">
+</head>
+<body>
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <div class="sidebar-brand">
+            <img src="assets/logo.webp" alt="Stackly Logo" style="height: 28px; width: auto;">
+            
+        </div>
+
+        <div class="sidebar-user">
+            <div class="avatar">G</div>
+            <div class="info">
+                <h4>Gaganachukki2000</h4>
+                <span>user@stackly.com</span>
+            </div>
+        </div>
+
+        <div class="sidebar-label">Main</div>
+        <ul class="sidebar-menu">
+            <li>
+                <a href="#" class="active">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+                    Dashboard
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line><path d="M16 10a4 4 0 0 1-8 0"></path></svg>
+                    My Orders
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+                    Favorites
+                </a>
+            </li>
+        </ul>
+        
+        <div class="sidebar-label">Settings</div>
+        <ul class="sidebar-menu">
+            <li>
+                <a href="index.html">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+                    Back to Store
+                </a>
+            </li>
+            <li>
+                <a href="Login.html" style="color: #f64e60;">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
+                    Logout
+                </a>
+            </li>
+        </ul>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <header class="header">
+            <h1>Stackly Customer Portal</h1>
+            <div class="header-right">
+                <button class="header-btn">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
+                    <span class="badge">2</span>
+                </button>
+                <div style="display: flex; align-items: center; gap: 10px; background: var(--dash-card); padding: 5px 15px 5px 5px; border-radius: 50px; border: 1px solid var(--dash-border);">
+                    <div class="avatar" style="width: 30px; height: 30px; border-radius: 50%; background: var(--dash-accent); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700;">G</div>
+                    <span style="font-weight: 600; font-size: 13px;">Gaganachukki2000</span>
+                </div>
+            </div>
+        </header>
+
+        <section class="welcome-sec">
+            <h2>Welcome back, Gaganachukki2000!</h2>
+            <p>Here's what's happening with your food orders today.</p>
+        </section>
+
+        <div class="stats-grid">
+            <div class="stat-card" style="border-top-color: var(--dash-accent);">
+                <h3>12</h3>
+                <p>Total Orders</p>
+                <div class="stat-trend">
+                    ↑ 20% from last month
+                </div>
+            </div>
+            <div class="stat-card" style="border-top-color: var(--dash-success);">
+                <h3>08</h3>
+                <p>Favorite Dishes</p>
+                <div class="stat-trend">
+                    ↑ 14% from last month
+                </div>
+            </div>
+            <div class="stat-card" style="border-top-color: var(--dash-warning);">
+                <h3>450</h3>
+                <p>Reward Points</p>
+                <div class="stat-trend down">
+                    ↓ 50 pts expiring soon
+                </div>
+            </div>
+        </div>
+
+        <div class="section-grid">
+            <div class="panel">
+                <h3>Recent Orders Activity</h3>
+                <table class="data-table">
+                    <thead>
+                        <tr>
+                            <th>Order ID</th>
+                            <th>Dish</th>
+                            <th>Date</th>
+                            <th>Amount</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>#ORD-2091</td>
+                            <td>Chicken Biryani</td>
+                            <td>Today, 1:30 PM</td>
+                            <td>₹220</td>
+                            <td><span class="status completed">Delivered</span></td>
+                        </tr>
+                        <tr>
+                            <td>#ORD-1842</td>
+                            <td>Masala Dosa</td>
+                            <td>Yesterday</td>
+                            <td>₹160</td>
+                            <td><span class="status completed">Delivered</span></td>
+                        </tr>
+                        <tr>
+                            <td>#ORD-1804</td>
+                            <td>Premium Pizza</td>
+                            <td>Jul 12, 2026</td>
+                            <td>₹180</td>
+                            <td><span class="status completed">Delivered</span></td>
+                        </tr>
+                        <tr>
+                            <td>#ORD-1755</td>
+                            <td>Healthy Bowl</td>
+                            <td>Jul 10, 2026</td>
+                            <td>₹210</td>
+                            <td><span class="status completed">Delivered</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div class="panel">
+                <h3>Top Favorites</h3>
+                <div style="display: flex; flex-direction: column; gap: 15px;">
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <img src="assets/food_biryani.webp" alt="Biryani" style="width: 50px; height: 50px; border-radius: 8px; object-fit: cover;">
+                        <div>
+                            <h4 style="margin: 0 0 5px 0; font-size: 13px;">Chicken Biryani</h4>
+                            <span style="color: var(--dash-text-muted); font-size: 11px;">Ordered 8 times</span>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <img src="assets/food_pizza.webp" alt="Pizza" style="width: 50px; height: 50px; border-radius: 8px; object-fit: cover;">
+                        <div>
+                            <h4 style="margin: 0 0 5px 0; font-size: 13px;">Premium Pizza</h4>
+                            <span style="color: var(--dash-text-muted); font-size: 11px;">Ordered 5 times</span>
+                        </div>
+                    </div>
+                    <div style="display: flex; align-items: center; gap: 15px;">
+                        <img src="assets/OIP (1).webp" alt="Paneer" style="width: 50px; height: 50px; border-radius: 8px; object-fit: cover;">
+                        <div>
+                            <h4 style="margin: 0 0 5px 0; font-size: 13px;">Paneer Masala</h4>
+                            <span style="color: var(--dash-text-muted); font-size: 11px;">Ordered 3 times</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+</body>
+</html>

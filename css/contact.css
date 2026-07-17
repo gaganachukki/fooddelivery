@@ -1,0 +1,13 @@
+/* Contact Animations */
+.contact-form input, .contact-form textarea { transition: border-color 0.3s, box-shadow 0.3s, transform 0.3s; }
+.contact-form input:focus, .contact-form textarea:focus { transform: translateX(5px); }
+.contact-card { animation: fadeInUp 0.8s ease forwards; opacity: 0; }
+.contact-card:nth-child(1) { animation-delay: 0.2s; }
+.contact-card:nth-child(2) { animation-delay: 0.4s; }
+/* Contact Hero */
+.about-hero, .contact-hero, .menu-hero {
+    padding: 120px 20px;
+    text-align: center;
+    color: white;
+    position: relative;
+}

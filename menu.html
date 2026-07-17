@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu - Stackly Premium Dining</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="css/menu.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+
+<body>
+
+        <header>
+        <div class="navbar glass">
+            <a href="index.html" class="logo">
+                <img src="assets/logo.webp" alt="Stackly Logo" style="height: 45px; width: auto; object-fit: contain;">
+            </a>
+            
+            <nav>
+                <a href="index.html" class="nav-home">Home</a>
+                <a href="about.html" class="nav-about">About</a>
+                <a href="menu.html" class="shop-link nav-shop active">Shop <span class="badge-new">New</span></a>
+                <a href="blog.html" class="nav-blog">Blog</a>
+                <a href="services.html" class="nav-services">Services</a>
+                <a href="contact.html" class="nav-contact">Contact</a>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="Login.html" class="login-btn-nav">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg> Login
+                </a>
+                <a href="404.html" class="cart-link">
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"></path>
+                        <line x1="3" y1="6" x2="21" y2="6"></line>
+                        <path d="M16 10a4 4 0 0 1-8 0"></path>
+                    </svg>
+                    <span class="cart-badge">0</span>
+                </a>
+            </div>
+
+            <button class="mobile-menu-toggle" aria-label="Toggle Navigation" aria-expanded="false" onclick="document.querySelector('.navbar').classList.toggle('active')">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <line x1="3" y1="12" x2="21" y2="12"></line>
+                    <line x1="3" y1="6" x2="21" y2="6"></line>
+                    <line x1="3" y1="18" x2="21" y2="18"></line>
+                </svg>
+            </button>
+        </div>
+    </header>
+
+    <section class="menu-hero"
+        style="background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('assets/menu_hero.webp'); background-size: cover; background-position: center;">
+        <h1 class="reveal">Explore our diverse menu</h1>
+        <p class="reveal">Hand-picked dishes from the finest local kitchens, delivered fresh.</p>
+
+    </section>
+
+    <div class="reveal" style="padding: 40px 80px 30px; display: flex; gap: 15px; overflow-x: auto; white-space: nowrap; scrollbar-width: none;">
+        <button class="filter-btn active" data-filter="all"
+            style="padding: 10px 25px; border-radius: 50px; background: var(--primary); color: white; border: none; font-weight: 600; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
+            All Dishes</button>
+        <button class="filter-btn" data-filter="Main Course"
+            style="padding: 10px 25px; border-radius: 50px; background: white; color: var(--text-main); border: 1px solid #ddd; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2L2 7l10 5 10-5-10-5z"></path><path d="M2 17l10 5 10-5"></path><path d="M2 12l10 5 10-5"></path></svg>
+            Main Course</button>
+        <button class="filter-btn" data-filter="Fast Food"
+            style="padding: 10px 25px; border-radius: 50px; background: white; color: var(--text-main); border: 1px solid #ddd; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 10.51l-4.22-4.22a9.23 9.23 0 0 1 0-13.04l.73-.73a1 1 0 0 0-1.42 0l-.73.73a11.23 11.23 0 0 0 0 15.86l4.22 4.22a1 1 0 0 0 1.42 0l4.22-4.22a1 1 0 0 0 0-1.42l-4.22-4.22z"></path><path d="M12 18V6"></path><path d="M12 18a6 6 0 1 1-12 0 6 6 0 0 1 12 0z"></path></svg>
+            Fast Food</button>
+        <button class="filter-btn" data-filter="Indian"
+            style="padding: 10px 25px; border-radius: 50px; background: white; color: var(--text-main); border: 1px solid #ddd; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22a10 10 0 1 0 0-20 10 10 0 0 0 0 20z"></path><path d="M12 16a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"></path><path d="M12 13a1 1 0 1 0 0-2 1 1 0 0 0 0 2z"></path></svg>
+            Indian</button>
+        <button class="filter-btn" data-filter="Beverages"
+            style="padding: 10px 25px; border-radius: 50px; background: white; color: var(--text-main); border: 1px solid #ddd; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path><line x1="6" y1="1" x2="6" y2="4"></line><line x1="10" y1="1" x2="10" y2="4"></line><line x1="14" y1="1" x2="14" y2="4"></line></svg>
+            Beverages</button>
+        <button class="filter-btn" data-filter="Desserts"
+            style="padding: 10px 25px; border-radius: 50px; background: white; color: var(--text-main); border: 1px solid #ddd; font-weight: 500; cursor: pointer; display: flex; align-items: center; gap: 8px;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><path d="M12 8v4"></path><path d="M12 16h.01"></path><path d="M16 12l-4-4-4 4"></path></svg>
+            Desserts</button>
+    </div>
+
+    <section class="menu-section">
+        <div class="menu-grid" id="menu-grid">
+            <!-- Indian -->
+            <div class="card reveal" data-category="Indian" data-city="Bangalore">
+                <img src="assets/food_biryani.webp" alt="Chicken Biriyani" class="card-img" loading="lazy">
+                <div class="card-content">
+                    <h3 style="font-size: 20px; margin-bottom: 5px;">Chicken Biriyani</h3>
+                    <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 15px; flex-grow: 1;">Aromatic basmati rice
+                        with tender spiced chicken.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 20px; font-weight: 700; color: var(--primary);">₹220</span>
+                        <a href="404.html"><button>Add to Cart</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card reveal" data-category="Indian" data-city="Chennai">
+                <img src="assets/food_dosa.webp" alt="Masala Dosa" class="card-img" loading="lazy">
+                <div class="card-content">
+                    <h3 style="font-size: 20px; margin-bottom: 5px;">Masala Dosa</h3>
+                    <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 15px; flex-grow: 1;">Crispy South Indian crepe
+                        with potato filling.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 20px; font-weight: 700; color: var(--primary);">₹80</span>
+                        <a href="404.html"><button>Add to Cart</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card reveal" data-category="Indian" data-city="Hyderabad">
+                <img src="assets/OIP (1).webp"
+                    alt="Spicy and creamy Paneer Butter Masala curry with fresh coriander" class="card-img" loading="lazy">
+                <div class="card-content">
+                    <h3 style="font-size: 20px; margin-bottom: 5px;">Paneer Masala</h3>
+                    <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 15px; flex-grow: 1;">Rich and creamy
+                        tomato-based cottage cheese curry.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 20px; font-weight: 700; color: var(--primary);">₹190</span>
+                        <a href="404.html"><button>Add to Cart</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Course -->
+            <div class="card reveal" data-category="Main Course" data-city="Delhi">
+                <img src="assets/OIP.webp"
+                    alt="Delicious Italian Alfredo Pasta with creamy white sauce and herbs" class="card-img" loading="lazy">
+                <div class="card-content">
+                    <h3 style="font-size: 20px; margin-bottom: 5px;">Alfredo Pasta</h3>
+                    <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 15px; flex-grow: 1;">Classic white sauce pasta
+                        with garlic and parmesan.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 20px; font-weight: 700; color: var(--primary);">₹240</span>
+                        <a href="404.html"><button>Add to Cart</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card reveal" data-category="Main Course" data-city="Mumbai">
+                <img src="assets/food_salad.webp" alt="Garden Salad" class="card-img" loading="lazy">
+                <div class="card-content">
+                    <h3 style="font-size: 20px; margin-bottom: 5px;">Garden Salad</h3>
+                    <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 15px; flex-grow: 1;">Fresh seasonal greens
+                        with lemon vinaigrette.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 20px; font-weight: 700; color: var(--primary);">₹150</span>
+                        <a href="404.html"><button>Add to Cart</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card reveal" data-category="Main Course">
+                <img src="./assets/Bowl.webp"
+                    alt="Poke Bowl" class="card-img" loading="lazy">
+                <div class="card-content">
+                    <h3 style="font-size: 20px; margin-bottom: 5px;">Healthy Bowl</h3>
+                    <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 15px; flex-grow: 1;">Quinoa, avocado, and
+                        fresh veggies with tahini.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 20px; font-weight: 700; color: var(--primary);">₹210</span>
+                        <a href="404.html"><button>Add to Cart</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Fast Food -->
+            <div class="card reveal" data-category="Fast Food">
+                <img src="assets/food_pizza.webp" alt="Premium Pizza" class="card-img" loading="lazy">
+                <div class="card-content">
+                    <h3 style="font-size: 20px; margin-bottom: 5px;">Premium Pizza</h3>
+                    <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 15px; flex-grow: 1;">Loaded with fresh
+                        toppings and gooey mozzarella.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 20px; font-weight: 700; color: var(--primary);">₹180</span>
+                        <a href="404.html"><button>Add to Cart</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card reveal" data-category="Fast Food">
+                <img src="assets/food_burger.webp" alt="Gourmet Burger" class="card-img" loading="lazy">
+                <div class="card-content">
+                    <h3 style="font-size: 20px; margin-bottom: 5px;">Gourmet Burger</h3>
+                    <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 15px; flex-grow: 1;">Juicy patty with fresh
+                        lettuce and secret grill sauce.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 20px; font-weight: 700; color: var(--primary);">₹120</span>
+                        <a href="404.html"><button>Add to Cart</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card reveal" data-category="Fast Food">
+                <img src="./assets/Noodles.webp"
+                    alt="Spicy Schezwan Hakka Noodles with stir-fried vegetables" class="card-img" loading="lazy">
+                <div class="card-content">
+                    <h3 style="font-size: 20px; margin-bottom: 5px;">Hakka Noodles</h3>
+                    <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 15px; flex-grow: 1;">Stir-fried noodles with
+                        fresh spring veggies.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 20px; font-weight: 700; color: var(--primary);">₹160</span>
+                        <a href="404.html"><button>Add to Cart</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card reveal" data-category="Fast Food" data-city="Salem">
+                <img src="assets/DSC_0472-scaled.webp"
+                    alt="Triple-layer grilled vegetarian Club Sandwich with cheese" class="card-img" loading="lazy">
+                <div class="card-content">
+                    <h3 style="font-size: 20px; margin-bottom: 5px;">Club Sandwich</h3>
+                    <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 15px; flex-grow: 1;">Triple-layer sandwich
+                        with grilled greens and cheese.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 20px; font-weight: 700; color: var(--primary);">₹140</span>
+                        <a href="404.html"><button>Add to Cart</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Beverages -->
+            <div class="card reveal" data-category="Beverages">
+                <img src="assets/food_coffee.webp" alt="Coffee Latte" class="card-img" loading="lazy">
+                <div class="card-content">
+                    <h3 style="font-size: 20px; margin-bottom: 5px;">Coffee Latte</h3>
+                    <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 15px; flex-grow: 1;">Freshly brewed espresso
+                        with steamed milk foam.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 20px; font-weight: 700; color: var(--primary);">₹90</span>
+                        <a href="404.html"><button>Add to Cart</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card reveal" data-category="Beverages" data-city="Coimbatore">
+                <img src="assets/Frozen-Mango-Lassi-3.webp"
+                    alt="Refreshing chilled Mango Lassi with mint garnish" class="card-img" loading="lazy">
+                <div class="card-content">
+                    <h3 style="font-size: 20px; margin-bottom: 5px;">Mango Lassi</h3>
+                    <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 15px; flex-grow: 1;">Traditional creamy
+                        yogurt-based mango drink.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 20px; font-weight: 700; color: var(--primary);">₹110</span>
+                        <a href="404.html"><button>Add to Cart</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card reveal" data-category="Beverages">
+                <img src="./assets/Orange Juice.webp"
+                    alt="Fresh Juice" class="card-img" loading="lazy">
+                <div class="card-content">
+                    <h3 style="font-size: 20px; margin-bottom: 5px;">Fresh Orange Juice</h3>
+                    <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 15px; flex-grow: 1;">100% pure squeezed
+                        oranges with no added sugar.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 20px; font-weight: 700; color: var(--primary);">₹130</span>
+                        <a href="404.html"><button>Add to Cart</button></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desserts -->
+            <div class="card reveal" data-category="Desserts">
+                <img src="assets/food_cake.webp" alt="Chocolate Truffle" class="card-img" loading="lazy">
+                <div class="card-content">
+                    <h3 style="font-size: 20px; margin-bottom: 5px;">Chocolate Truffle</h3>
+                    <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 15px; flex-grow: 1;">Rich dark chocolate cake
+                        with ganache layering.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 20px; font-weight: 700; color: var(--primary);">₹250</span>
+                        <a href="404.html"><button>Add to Cart</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card reveal" data-category="Desserts">
+                <img src="assets/food_donut.webp" alt="Glazed Donut" class="card-img" loading="lazy">
+                <div class="card-content">
+                    <h3 style="font-size: 20px; margin-bottom: 5px;">Glazed Donut</h3>
+                    <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 15px; flex-grow: 1;">Classic soft donut with
+                        sugar glaze and sprinkles.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 20px; font-weight: 700; color: var(--primary);">₹60</span>
+                        <a href="404.html"><button>Add to Cart</button></a>
+                    </div>
+                </div>
+            </div>
+            <div class="card reveal" data-category="Desserts" data-city="Salem">
+                <img src="assets/2-12.webp"
+                    alt="Sweet golden Gulab Jamun served with rose syrup" class="card-img" loading="lazy">
+                <div class="card-content">
+                    <h3 style="font-size: 20px; margin-bottom: 5px;">Gulab Jamun</h3>
+                    <p style="color: var(--text-muted); font-size: 14px; margin-bottom: 15px; flex-grow: 1;">Golden milk solid
+                        dumplings in rose sugar syrup.</p>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span style="font-size: 20px; font-weight: 700; color: var(--primary);">₹120</span>
+                        <a href="404.html"><button>Add to Cart</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-grid">
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <img src="assets/logo.webp" alt="Stackly Logo" style="height: 50px; width: auto; margin-bottom: 10px;">
+                    
+                </div>
+                <p>Premium event management platform delivering unforgettable experiences worldwide. Your vision, our expertise.</p>
+                <div class="social-links">
+                    <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                    <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
+                    <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                    <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                </div>
+            </div>
+            <div class="footer-links">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="#">Events</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="services.html">Services</a></li>
+                    <li><a href="#">Gallery</a></li>
+                </ul>
+            </div>
+            <div class="footer-links">
+                <h3>Services</h3>
+                <ul>
+                    <li><a href="#">Wedding Planning</a></li>
+                    <li><a href="#">Corporate Events</a></li>
+                    <li><a href="#">Concert Management</a></li>
+                    <li><a href="#">Birthday Parties</a></li>
+                    <li><a href="#">Gala Events</a></li>
+                </ul>
+            </div>
+            <div class="footer-contact">
+                <h3>Contact Info</h3>
+                <p>hello@stackly.com</p>
+                <p>+91 98765 43210</p>
+                <p>Salem, Tamil Nadu</p>
+                <p>Mon - Fri: 9AM - 6PM</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Stackly. All rights reserved.</p>
+            <div class="footer-bottom-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Cookie Policy</a>
+            </div>
+        </div>
+        <a href="#" class="scroll-top">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 15l-6-6-6 6"></path></svg>
+        </a>
+    </footer>
+
+
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

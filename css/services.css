@@ -1,0 +1,60 @@
+.services-hero {
+            padding: 100px 40px 60px;
+            text-align: center;
+            background: linear-gradient(rgba(255, 255, 255, 0.9), rgba(255, 255, 255, 0.95)), url('assets/hero_food.webp');
+            background-size: cover;
+            background-position: center;
+        }
+        .services-hero h1 {
+            font-size: 36px;
+            margin-bottom: 20px;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+            padding: 60px 80px 100px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .service-card {
+            background: white;
+            border-radius: 24px;
+            padding: 40px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+            transition: transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            border: 1px solid rgba(0,0,0,0.03);
+        }
+        .service-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 15px 40px rgba(255, 82, 0, 0.15);
+        }
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            background: var(--primary-light);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 25px;
+            color: var(--primary);
+        }
+        .service-card h3 {
+            font-size: 17px;
+            margin-bottom: 15px;
+            color: var(--text-main);
+        }
+        .service-card p {
+            color: var(--text-muted);
+            font-size: 11px;
+            line-height: 1.6;
+        }
+
+/* Animations */
+.blog-card, .service-card { animation: fadeInUp 0.8s ease forwards; opacity: 0; }
+.blog-card:nth-child(1), .service-card:nth-child(1) { animation-delay: 0.1s; }
+.blog-card:nth-child(2), .service-card:nth-child(2) { animation-delay: 0.3s; }
+.blog-card:nth-child(3), .service-card:nth-child(3) { animation-delay: 0.5s; }
+@keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }

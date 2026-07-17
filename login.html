@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Login</title>
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.2.0/fonts/remixicon.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/login.css">
+</head>
+
+<body>
+
+    <div class="overlay"></div>
+
+    <div class="container">
+
+        <div class="left-section">
+            <h1>Stackly Foodie</h1>
+            <h2>Delicious food,<br>fast delivery<br>and more.</h2>
+            <p>Order anytime. Fresh meals guaranteed.</p>
+        </div>
+
+        <div class="login-box" style="position: relative;">
+            <a href="index.html" title="Back to Home" style="position: absolute; top: 20px; right: 25px; color: #a0a5b1; font-size: 24px; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f87e0a'" onmouseout="this.style.color='#a0a5b1'">
+                <i class="ri-close-line"></i>
+            </a>
+            <h2>Sign In</h2>
+
+            <form id="loginForm">
+
+                <select id="role" required>
+                    <option value="">Select Role</option>
+                    <option value="user">User</option>
+                    <option value="admin">Admin</option>
+                </select>
+
+                <input type="email" id="loginEmail" placeholder="Email Address" autocomplete="username" required />
+                
+                <div class="password-field">
+                    <input type="password" id="loginPassword" placeholder="Password" autocomplete="current-password" required />
+                    <i class="ri-eye-off-line toggle-password" id="toggleLoginPassword"></i>
+                </div>
+
+                <button type="submit">Sign In</button>
+
+                <div class="social-login">
+                    <p>Or continue with</p>
+                    <div class="social-icons">
+                        <a href="404.html" class="social-icon"><i class="ri-google-fill"></i></a>
+                        <a href="404.html" class="social-icon"><i class="ri-facebook-fill"></i></a>
+                    </div>
+                </div>
+
+                <div class="options">
+                    <label><input type="checkbox" /> Remember me</label>
+                    <a href="404.html">Forgot Password?</a>
+                </div>
+
+                <p class="signup-text">
+                    New to Stackly Foodie?
+                    <a href="signin.html">Sign Up</a>
+                </p>
+
+            </form>
+        </div>
+
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

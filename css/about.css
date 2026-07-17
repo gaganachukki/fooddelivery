@@ -1,0 +1,55 @@
+/* About Animations */
+.about-hero h1 { animation: scaleIn 0.8s ease forwards; }
+.team-member { transition: transform 0.4s ease, box-shadow 0.4s ease; }
+.team-member:hover { transform: translateY(-15px) scale(1.02); box-shadow: 0 20px 40px rgba(0,0,0,0.1); }
+@keyframes scaleIn { from { opacity: 0; transform: scale(0.9); } to { opacity: 1; transform: scale(1); } }
+.stat { text-align: center; min-width: 120px; }
+.stat h2 { display: inline-block; font-size: 39px; color: var(--primary); margin-bottom: 0px; line-height: 1; font-weight: 700; }
+.stat span { font-size: 24px; font-weight: 700; color: var(--primary); margin-left: 2px; }
+.stat p { color: var(--text-main); font-weight: 500; margin-top: 5px; font-size: 12px; }
+/* About/Contact Heroes */
+.about-hero, .contact-hero, .menu-hero {
+    padding: 120px 20px;
+    text-align: center;
+    color: white;
+    position: relative;
+}
+
+
+/* Stats */
+.stats {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 30px;
+    padding: 30px 20px; max-width: 900px; margin: 0 auto;
+    background: var(--bg-white);
+}
+
+.stat h2 {
+    font-size: 32px;
+    color: var(--primary);
+    margin-bottom: 5px;
+}
+
+
+/* Team */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+    padding: 60px 80px;
+    justify-content: center;
+}
+
+.about-grid, .contact-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 40px;
+    justify-content: center; /* Center grids if they don't fill the row */
+}
+
+.about-content, .contact-section, .food-section, .grocery-section, .popular-section, .features-section {
+    padding: 100px 80px;
+}
+

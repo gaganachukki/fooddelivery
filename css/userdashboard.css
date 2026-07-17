@@ -1,0 +1,317 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --dash-bg: #111116;
+    --dash-sidebar: #1a1a24;
+    --dash-card: #20202c;
+    --dash-border: #2c2c3b;
+    --dash-text-main: #ffffff;
+    --dash-text-muted: #9e9ea7;
+    --dash-accent: #f87e0a;
+    --dash-accent-light: rgba(255, 82, 0, 0.1);
+    --dash-success: #1bc5bd;
+    --dash-success-light: rgba(27, 197, 189, 0.1);
+    --dash-warning: #f87e0a;
+    --font: 'Poppins', sans-serif;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: var(--dash-bg);
+    color: var(--dash-text-main);
+    font-family: var(--font);
+    font-size: 13px;
+    display: flex;
+    min-height: 100vh;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* Sidebar */
+.sidebar {
+    width: 250px;
+    background-color: var(--dash-sidebar);
+    border-right: 1px solid var(--dash-border);
+    display: flex;
+    flex-direction: column;
+    padding: 20px 0;
+    flex-shrink: 0;
+}
+
+.sidebar-brand {
+    padding: 0 25px 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.sidebar-user {
+    padding: 15px 20px;
+    margin: 0 15px 10px;
+    background: var(--dash-card);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: 1px solid var(--dash-border);
+}
+
+.sidebar-user .avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: var(--dash-accent);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+}
+
+.sidebar-user .info h4 {
+    margin: 0;
+    font-size: 13px;
+    color: white;
+}
+
+.sidebar-user .info span {
+    font-size: 11px;
+    color: var(--dash-text-muted);
+}
+
+.sidebar-menu {
+    list-style: none;
+    padding: 0 15px;
+    margin: 0;
+    
+}
+
+.sidebar-menu li {
+    margin-bottom: 5px;
+}
+
+.sidebar-menu a {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 10px 15px;
+    color: var(--dash-text-muted);
+    text-decoration: none;
+    border-radius: 8px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.sidebar-menu a:hover, .sidebar-menu a.active {
+    background: var(--dash-accent-light);
+    color: var(--dash-accent);
+}
+
+.sidebar-menu a svg {
+    width: 18px;
+    height: 18px;
+}
+
+.sidebar-label {
+    padding: 10px 25px 5px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #555566;
+    letter-spacing: 1px;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    padding: 0 40px 40px;
+}
+
+/* Header */
+.header {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.header h1 {
+    font-size: 20px;
+    font-weight: 600;
+    margin: 0;
+    color: var(--dash-text-muted);
+}
+
+.header-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.header-btn {
+    background: var(--dash-card);
+    border: 1px solid var(--dash-border);
+    color: var(--dash-text-main);
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s;
+}
+
+.header-btn:hover {
+    border-color: var(--dash-accent);
+    color: var(--dash-accent);
+}
+
+.header-btn .badge {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    background: var(--dash-success);
+    color: white;
+    font-size: 9px;
+    font-weight: bold;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* Dashboard Grid */
+.welcome-sec {
+    margin: 20px 0 40px;
+}
+.welcome-sec h2 {
+    font-size: 32px;
+    font-weight: 700;
+    margin: 0 0 5px 0;
+}
+.welcome-sec p {
+    color: var(--dash-text-muted);
+    font-size: 14px;
+    margin: 0;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.stat-card {
+    background: var(--dash-card);
+    border: 1px solid var(--dash-border);
+    border-radius: 12px;
+    padding: 25px;
+    position: relative;
+    overflow: hidden;
+}
+.stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: var(--dash-accent);
+}
+
+.stat-card h3 {
+    font-size: 42px;
+    font-weight: 700;
+    margin: 0 0 10px 0;
+    line-height: 1;
+}
+
+.stat-card p {
+    font-size: 12px;
+    color: var(--dash-text-muted);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin: 0 0 15px 0;
+}
+
+.stat-trend {
+    font-size: 12px;
+    color: var(--dash-success);
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.stat-trend.down { color: var(--dash-warning); }
+
+/* Tables and Charts sections */
+.section-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 25px;
+}
+
+.panel {
+    background: var(--dash-card);
+    border: 1px solid var(--dash-border);
+    border-radius: 12px;
+    padding: 25px;
+}
+
+.panel h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin: 0 0 20px 0;
+}
+
+.data-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.data-table th {
+    text-align: left;
+    padding: 12px;
+    color: var(--dash-text-muted);
+    font-size: 11px;
+    text-transform: uppercase;
+    font-weight: 600;
+    border-bottom: 1px solid var(--dash-border);
+}
+
+.data-table td {
+    padding: 15px 12px;
+    border-bottom: 1px solid var(--dash-border);
+    font-size: 13px;
+}
+
+.data-table tbody tr:last-child td {
+    border-bottom: none;
+}
+
+.status {
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 600;
+}
+.status.completed { background: var(--dash-success-light); color: var(--dash-success); }
+.status.pending { background: var(--dash-accent-light); color: var(--dash-accent); }
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 6px; }
+::-webkit-scrollbar-track { background: var(--dash-bg); }
+::-webkit-scrollbar-thumb { background: var(--dash-border); border-radius: 3px; }
+::-webkit-scrollbar-thumb:hover { background: #444455; }
