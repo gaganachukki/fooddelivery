@@ -17,7 +17,7 @@
 
 body {
     height: 100vh;
-    background: url("assets/asianfood.webp") center/cover no-repeat fixed;
+    background: url("../assets/register_bg.webp") center/cover no-repeat fixed;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -190,6 +190,18 @@ body {
     color: #f87e0a;
     text-decoration: none;
     font-weight: bold;
+}
+
+@media (max-width: 768px) {
+    .signup-box {
+        width: 95%;
+        padding: 30px 20px;
+    }
+
+    .signup-box input,
+    .signup-box select {
+        width: 100%;
+    }
 }
 
 @media(max-width:480px) {

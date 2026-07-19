@@ -67,7 +67,47 @@
 
     </div>
 
-    <script src="script.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const role = document.getElementById('role').value;
+            const email = document.getElementById('loginEmail').value;
+            
+            // Extract name from email and capitalize first letter
+            let name = email.split('@')[0];
+            name = name.charAt(0).toUpperCase() + name.slice(1);
+            
+            localStorage.setItem('loggedInUserName', name);
+            localStorage.setItem('loggedInUserEmail', email);
+            
+            if (role === 'admin') {
+                window.location.href = 'admindashboard.html';
+            } else if (role === 'user') {
+                window.location.href = 'userdashboard.html';
+            } else {
+                alert('Please select a role.');
+            }
+        });
+        
+        const togglePassword = document.getElementById('toggleLoginPassword');
+        const passwordInput = document.getElementById('loginPassword');
+        if (togglePassword && passwordInput) {
+            togglePassword.addEventListener('click', function() {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+                this.classList.toggle('ri-eye-line');
+                this.classList.toggle('ri-eye-off-line');
+            });
+        }
+    </script>
+
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+    <!-- Stackly Animations -->
+    <script src="js/animations.js" defer></script>
 </body>
 
 </html>

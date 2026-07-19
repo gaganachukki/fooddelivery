@@ -8,82 +8,77 @@
 </head>
 <body>
 
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
     <!-- Sidebar -->
-    <aside class="sidebar">
+    <aside class="sidebar" id="sidebar">
+        <button class="sidebar-close" id="sidebarClose">
+            <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
         <div class="sidebar-brand">
-            <img src="assets/logo.webp" alt="Stackly Logo" style="height: 28px; width: auto;">
+            <img src="assets/logo.webp" alt="Stackly Logo" style="height: 45px; width: auto;">
             
         </div>
 
-        <div class="sidebar-user">
-            <div class="avatar" style="background: var(--dash-success);">A</div>
+        <div class="sidebar-user" style="padding: 15px 20px; margin: 0 15px 20px; background: var(--dash-card); border-radius: 12px; display: flex; align-items: center; gap: 15px; border: 1px solid var(--dash-border);">
+            <div class="avatar" style="width: 45px; height: 45px; font-size: 20px;">A</div>
             <div class="info">
-                <h4>System Admin</h4>
-                <span>Super Admin</span>
+                <h4 style="font-size: 16px; font-weight: 700; color: white; margin: 0 0 2px 0;"><span id="sidebarName">Admin</span></h4>
+                <div style="font-size: 12px; color: var(--dash-text-muted); margin-bottom: 8px;"><span id="sidebarEmail">admin@stackly.com</span></div>
+                <div>
+                    <span style="font-size: 10px; font-weight: 700; color: #4e7df6; border: 1px solid #4e7df6; padding: 3px 8px; border-radius: 20px; background: rgba(78,125,246,0.1);">ADMIN PANEL</span>
+                </div>
             </div>
         </div>
 
         <div class="sidebar-label">Management</div>
-        <ul class="sidebar-menu">
-            <li>
-                <a href="#" class="active">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="7" height="7"></rect><rect x="14" y="3" width="7" height="7"></rect><rect x="14" y="14" width="7" height="7"></rect><rect x="3" y="14" width="7" height="7"></rect></svg>
-                    Overview
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z"></path><line x1="3" y1="6" x2="21" y2="6"></line></svg>
-                    Orders
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>
-                    Customers
-                </a>
-            </li>
-            <li>
-                <a href="#">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"></path><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"></path></svg>
-                    Menu Items
-                </a>
-            </li>
+                <ul class="sidebar-menu">
+            <li><a href="#" class="active" onclick="switchTab('overview', this)">Overview</a></li>
+            <li><a href="#" onclick="switchTab('orders', this)">Orders</a></li>
+            <li><a href="#" onclick="switchTab('customers', this)">Customers</a></li>
         </ul>
         
-        <div class="sidebar-label">Settings</div>
+        <div class="sidebar-label">System</div>
         <ul class="sidebar-menu">
-            <li>
-                <a href="index.html">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path></svg>
-                    View Store
-                </a>
-            </li>
-            <li>
-                <a href="Login.html" style="color: #f64e60;">
-                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"></path><polyline points="16 17 21 12 16 7"></polyline><line x1="21" y1="12" x2="9" y2="12"></line></svg>
-                    Logout
-                </a>
-            </li>
+            <li><a href="#" onclick="switchTab('menuitems', this)">Menu Items</a></li>
+            <li><a href="#" onclick="switchTab('analytics', this)">Analytics</a></li>
+            <li><a href="#" onclick="switchTab('settings', this)">Settings</a></li>
+        </ul>
+
+        <div class="sidebar-label">Account</div>
+        <ul class="sidebar-menu">
+            <li><a href="#" onclick="switchTab('profile', this)">Admin Profile</a></li>
+            <li><a href="index.html">View Store</a></li>
+            <li><a href="Login.html" style="color: #f64e60;">Logout</a></li>
         </ul>
     </aside>
 
     <!-- Main Content -->
     <main class="main-content">
         <header class="header">
-            <div style="background: var(--dash-card); border: 1px solid var(--dash-border); border-radius: 8px; padding: 10px 15px; display: flex; align-items: center; gap: 10px; width: 300px;">
+            <div style="display: flex; align-items: center; gap: 10px;">
+                <button class="dash-menu-toggle" id="menuToggle">
+                    <svg viewBox="0 0 24 24" width="24" height="24" stroke="currentColor" stroke-width="2" fill="none"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+                </button>
+                <img src="assets/logo.webp" alt="Stackly Logo" class="mobile-header-logo">
+            </div>
+            <div class="search-bar" style="background: var(--dash-card); border: 1px solid var(--dash-border); border-radius: 8px; padding: 10px 15px; display: flex; align-items: center; gap: 10px; width: 100%; max-width: 300px;">
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="var(--dash-text-muted)" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>
-                <input type="text" placeholder="Search orders, users..." style="background: transparent; border: none; color: white; width: 100%; outline: none; font-family: inherit;">
+                <input type="text" placeholder="Search orders, users..." style="background: transparent; border: none; color: white; outline: none; font-family: inherit;">
             </div>
             <div class="header-right">
-                <button class="header-btn">
+                <button class="header-btn" onclick="window.location.href='404.html'">
                     <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
                     <span class="badge" style="background: var(--dash-warning);">5</span>
                 </button>
+                <div class="user-profile-btn" style="display: flex; align-items: center; gap: 10px; background: var(--dash-card); padding: 5px 15px 5px 5px; border-radius: 50px; border: 1px solid var(--dash-border);">
+                    <div class="avatar" style="width: 30px; height: 30px; border-radius: 50%; background: var(--dash-accent); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700;">A</div>
+                    <span class="user-name-text" style="font-weight: 600; font-size: 13px;"><span id="headerName">System Admin</span></span>
+                </div>
             </div>
         </header>
-
-        <section class="welcome-sec">
+        <div id="tab-overview" class="tab-content active">
+            <section class="welcome-sec">
             <h2>Platform Overview</h2>
             <p>Real-time analytics for your Stackly food delivery platform.</p>
         </section>
@@ -117,7 +112,7 @@
             <div class="panel">
                 <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
                     <h3 style="margin: 0;">Recent Transactions</h3>
-                    <a href="#" style="color: var(--dash-accent); text-decoration: none; font-size: 12px; font-weight: 600;">View All</a>
+                    <a href="404.html" style="color: var(--dash-accent); text-decoration: none; font-size: 12px; font-weight: 600;">View All</a>
                 </div>
                 <table class="data-table">
                     <thead>
@@ -170,7 +165,281 @@
                 </div>
             </div>
         </div>
-    </main>
+        </div>
 
+        <div id="tab-orders" class="tab-content">
+
+            <section class="welcome-sec"><h2>Orders Management</h2><p>View and manage all customer orders.</p></section>
+            <div class="panel" style="margin-bottom: 25px;">
+                <h3>Live Orders (Action Required)</h3>
+                <table class="data-table">
+                    <thead><tr><th>Order ID</th><th>Customer</th><th>Restaurant</th><th>Amount</th><th>Action</th></tr></thead>
+                    <tbody>
+                        <tr><td>#ORD-3011</td><td>Rahul S.</td><td>Spicy Grill</td><td>₹450</td><td><button style="background: var(--dash-accent); color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;" onclick="window.location.href='404.html'">Assign Driver</button></td></tr>
+                        <tr><td>#ORD-3012</td><td>Anita K.</td><td>Burger Hub</td><td>₹210</td><td><button style="background: var(--dash-accent); color: white; border: none; padding: 5px 10px; border-radius: 5px; cursor: pointer;" onclick="window.location.href='404.html'">Assign Driver</button></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="panel" style="margin-bottom: 25px;">
+                <h3>Recent Order History</h3>
+                <table class="data-table">
+                    <thead><tr><th>Order ID</th><th>Customer</th><th>Amount</th><th>Status</th></tr></thead>
+                    <tbody>
+                        <tr><td>#ORD-2091</td><td>Gaganachukki2000</td><td>₹220</td><td><span class="status completed">Delivered</span></td></tr>
+                        <tr><td>#ORD-2092</td><td>Priya Gupta</td><td>₹450</td><td><span class="status pending">Preparing</span></td></tr>
+                        <tr><td>#ORD-2093</td><td>Rahul Sharma</td><td>₹180</td><td><span class="status completed">Delivered</span></td></tr>
+                        <tr><td>#ORD-2094</td><td>Sneha Reddy</td><td>₹320</td><td><span class="status completed">Delivered</span></td></tr>
+                        <tr><td>#ORD-2095</td><td>Vikram Singh</td><td>₹510</td><td><span class="status completed">Delivered</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="panel">
+                <h3>Order Dispatch Metrics</h3>
+                <p style="color: var(--dash-text-muted); line-height: 1.6;">Average delivery time today is 32 minutes. 94% of orders were delivered on time. 3 orders were delayed due to heavy traffic in Zone B.</p>
+            </div>
+
+        </div>
+
+
+
+        <div id="tab-customers" class="tab-content">
+
+            <section class="welcome-sec"><h2>Customer Directory</h2><p>Manage registered users and accounts.</p></section>
+            <div class="panel" style="margin-bottom: 25px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                    <h3 style="margin: 0;">Registered Users</h3>
+                    <input type="text" placeholder="Search users..." style="padding: 8px; border-radius: 5px; border: 1px solid var(--dash-border); background: var(--dash-bg); color: white;">
+                </div>
+                <table class="data-table">
+                    <thead><tr><th>User ID</th><th>Name</th><th>Email</th><th>Total Orders</th><th>Status</th></tr></thead>
+                    <tbody>
+                        <tr><td>#USR-101</td><td>Gaganachukki</td><td>user@stackly.com</td><td>12</td><td><span class="status completed">Active</span></td></tr>
+                        <tr><td>#USR-102</td><td>Priya Gupta</td><td>priya@mail.com</td><td>45</td><td><span class="status completed">Active</span></td></tr>
+                        <tr><td>#USR-103</td><td>Rahul Sharma</td><td>rahul@mail.com</td><td>8</td><td><span class="status completed">Active</span></td></tr>
+                        <tr><td>#USR-104</td><td>Sneha Reddy</td><td>sneha@mail.com</td><td>2</td><td><span class="status pending">Inactive</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="panel" style="margin-bottom: 25px;">
+                <h3>Customer Support Tickets</h3>
+                <table class="data-table">
+                    <thead><tr><th>Ticket ID</th><th>User</th><th>Issue</th><th>Status</th></tr></thead>
+                    <tbody>
+                        <tr><td>#TKT-551</td><td>Vikram Singh</td><td>Missing Item</td><td><span class="status pending">Open</span></td></tr>
+                        <tr><td>#TKT-552</td><td>Anita K.</td><td>Late Delivery</td><td><span class="status completed">Resolved</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="panel">
+                <h3>User Growth</h3>
+                <p style="color: var(--dash-text-muted); line-height: 1.6;">Platform gained 240 new users this week, representing a 15% increase. User retention rate holds steady at 68%.</p>
+            </div>
+
+        </div>
+
+
+
+        <div id="tab-menuitems" class="tab-content">
+
+            <section class="welcome-sec"><h2>Menu Items</h2><p>Add, edit, or remove dishes from the platform.</p></section>
+            <div class="panel" style="margin-bottom: 25px;">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 15px;">
+                    <h3 style="margin: 0;">Active Menu Database</h3>
+                    <button style="padding: 8px 15px; border-radius: 8px; border: none; background: var(--dash-success); color: white; font-weight: bold; cursor: pointer;" onclick="window.location.href='404.html'">+ Add New Item</button>
+                </div>
+                <table class="data-table">
+                    <thead><tr><th>Item ID</th><th>Dish Name</th><th>Category</th><th>Price</th><th>Availability</th></tr></thead>
+                    <tbody>
+                        <tr><td>#MNU-001</td><td>Chicken Biryani</td><td>Main Course</td><td>₹220</td><td><span class="status completed">In Stock</span></td></tr>
+                        <tr><td>#MNU-002</td><td>Premium Pizza</td><td>Fast Food</td><td>₹450</td><td><span class="status completed">In Stock</span></td></tr>
+                        <tr><td>#MNU-003</td><td>Masala Dosa</td><td>Breakfast</td><td>₹160</td><td><span class="status pending">Low Stock</span></td></tr>
+                        <tr><td>#MNU-004</td><td>Tandoori Roti</td><td>Breads</td><td>₹30</td><td><span class="status completed">In Stock</span></td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="panel" style="margin-bottom: 25px;">
+                <h3>Category Management</h3>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="padding: 15px; border-bottom: 1px solid var(--dash-border); display: flex; justify-content: space-between;"><span>Main Course</span><span>45 Items</span></li>
+                    <li style="padding: 15px; border-bottom: 1px solid var(--dash-border); display: flex; justify-content: space-between;"><span>Fast Food</span><span>32 Items</span></li>
+                    <li style="padding: 15px; display: flex; justify-content: space-between;"><span>Beverages</span><span>18 Items</span></li>
+                </ul>
+            </div>
+            <div class="panel">
+                <h3>Inventory Alerts</h3>
+                <p style="color: var(--dash-warning); line-height: 1.6;">Warning: 5 items are currently marked as out of stock by partner restaurants. Please review the inventory reports.</p>
+            </div>
+
+        </div>
+
+
+
+        <div id="tab-analytics" class="tab-content">
+
+            <section class="welcome-sec"><h2>System Analytics</h2><p>Deep dive into platform performance.</p></section>
+            <div class="panel" style="margin-bottom: 25px;">
+                <h3>Revenue Trends (Last 7 Days)</h3>
+                <div style="height: 150px; background: var(--dash-bg); border: 1px dashed var(--dash-border); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--dash-text-muted);">
+                    [ Chart Placeholder: Bar graph showing daily revenue ]
+                </div>
+            </div>
+            <div class="panel" style="margin-bottom: 25px;">
+                <h3>Top Performing Restaurants</h3>
+                <table class="data-table">
+                    <thead><tr><th>Rank</th><th>Restaurant</th><th>Total Sales</th><th>Rating</th></tr></thead>
+                    <tbody>
+                        <tr><td>1</td><td>Spicy Grill</td><td>₹1,45,000</td><td>4.8 ⭐</td></tr>
+                        <tr><td>2</td><td>Burger Hub</td><td>₹98,500</td><td>4.6 ⭐</td></tr>
+                        <tr><td>3</td><td>The Pizza Place</td><td>₹82,000</td><td>4.5 ⭐</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="panel">
+                <h3>Platform Insights</h3>
+                <p style="color: var(--dash-text-muted); line-height: 1.6;">Peak ordering hours are between 7:30 PM and 9:30 PM. Weekend sales account for 45% of total weekly revenue. Mobile app usage is up by 12%.</p>
+            </div>
+
+        </div>
+
+
+
+        <div id="tab-settings" class="tab-content">
+
+            <section class="welcome-sec"><h2>System Settings</h2><p>Configure platform-wide variables.</p></section>
+            <div class="panel" style="margin-bottom: 25px;">
+                <h3>Global Configurations</h3>
+                <div style="display: flex; flex-direction: column; gap: 15px; max-width: 500px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 10px; border-bottom: 1px solid var(--dash-border);">
+                        <span>Accepting New Orders</span>
+                        <input type="checkbox" checked style="width: 20px; height: 20px;">
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center; padding-bottom: 10px; border-bottom: 1px solid var(--dash-border);">
+                        <span>Surge Pricing (High Demand)</span>
+                        <input type="checkbox" style="width: 20px; height: 20px;">
+                    </div>
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span>Base Delivery Fee (₹)</span>
+                        <input type="number" value="40" style="width: 60px; padding: 5px; border-radius: 5px; border: 1px solid var(--dash-border); background: var(--dash-bg); color: white;">
+                    </div>
+                </div>
+            </div>
+            <div class="panel" style="margin-bottom: 25px;">
+                <h3>Tax Rates</h3>
+                <div style="display: flex; flex-direction: column; gap: 15px; max-width: 500px;">
+                    <div style="display: flex; justify-content: space-between; align-items: center;">
+                        <span>GST (%)</span>
+                        <input type="number" value="5" style="width: 60px; padding: 5px; border-radius: 5px; border: 1px solid var(--dash-border); background: var(--dash-bg); color: white;">
+                    </div>
+                </div>
+            </div>
+            <div class="panel">
+                <h3>Danger Zone</h3>
+                <p style="color: var(--dash-text-muted); margin-bottom: 15px;">These actions are irreversible.</p>
+                <button style="padding: 10px 20px; border-radius: 8px; border: none; background: #dc2626; color: white; font-weight: bold; cursor: pointer;" onclick="window.location.href='404.html'">Clear System Cache</button>
+            </div>
+
+        </div>
+
+
+
+        <div id="tab-profile" class="tab-content">
+
+            <section class="welcome-sec"><h2>Admin Profile</h2><p>Manage your administrative privileges.</p></section>
+            <div class="panel" style="margin-bottom: 25px;">
+                <h3>Admin Information</h3>
+                <div style="display: flex; flex-direction: column; gap: 15px; max-width: 400px;">
+                    <div><label style="font-size: 12px; color: var(--dash-text-muted);">Name</label><input type="text" value="System Admin" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--dash-border); background: var(--dash-bg); color: white; margin-top: 5px;"></div>
+                    <div><label style="font-size: 12px; color: var(--dash-text-muted);">Email</label><input type="text" value="admin@stackly.com" style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--dash-border); background: var(--dash-bg); color: white; margin-top: 5px;"></div>
+                    <div><label style="font-size: 12px; color: var(--dash-text-muted);">Role</label><input type="text" value="Super Administrator" disabled style="width: 100%; padding: 10px; border-radius: 8px; border: 1px solid var(--dash-border); background: rgba(255,255,255,0.05); color: var(--dash-text-muted); margin-top: 5px; cursor: not-allowed;"></div>
+                    <button style="padding: 10px; border-radius: 8px; border: none; background: var(--dash-accent); color: white; font-weight: bold; cursor: pointer; margin-top: 10px;" onclick="window.location.href='404.html'">Update Profile</button>
+                </div>
+            </div>
+            <div class="panel" style="margin-bottom: 25px;">
+                <h3>Access Logs</h3>
+                <table class="data-table">
+                    <thead><tr><th>Date & Time</th><th>IP Address</th><th>Action</th></tr></thead>
+                    <tbody>
+                        <tr><td>Today, 10:45 AM</td><td>192.168.1.1</td><td>Successful Login</td></tr>
+                        <tr><td>Yesterday, 9:20 PM</td><td>192.168.1.1</td><td>Changed System Settings</td></tr>
+                        <tr><td>Yesterday, 8:15 AM</td><td>192.168.1.1</td><td>Successful Login</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="panel">
+                <h3>Security Settings</h3>
+                <p style="color: var(--dash-text-muted); line-height: 1.6; margin-bottom: 15px;">Update your password or enable Two-Factor Authentication (2FA) for added security.</p>
+                <button style="padding: 10px 20px; border-radius: 8px; border: 1px solid var(--dash-border); background: transparent; color: white; font-weight: bold; cursor: pointer; margin-right: 10px;" onclick="window.location.href='404.html'">Change Password</button>
+                <button style="padding: 10px 20px; border-radius: 8px; border: 1px solid var(--dash-border); background: transparent; color: white; font-weight: bold; cursor: pointer;" onclick="window.location.href='404.html'">Enable 2FA</button>
+            </div>
+
+        </div>
+
+
+
+    </main>
+   </main>
+
+    <script>
+        function switchTab(tabId, element) {
+            document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+            document.querySelectorAll('.sidebar-menu a').forEach(el => el.classList.remove('active'));
+            
+            let tab = document.getElementById('tab-' + tabId);
+            if (tab) tab.classList.add('active');
+            if (element) element.classList.add('active');
+            
+            if (window.innerWidth <= 768) {
+                let sidebar = document.getElementById('sidebar');
+                let overlay = document.getElementById('sidebarOverlay');
+                if(sidebar) sidebar.classList.remove('active');
+                if(overlay) overlay.classList.remove('active');
+                document.body.classList.remove('no-scroll');
+            }
+        }
+
+        const menuToggle = document.getElementById('menuToggle');
+        const sidebarClose = document.getElementById('sidebarClose');
+        const sidebar = document.getElementById('sidebar');
+        const sidebarOverlay = document.getElementById('sidebarOverlay');
+
+        function toggleSidebar() {
+            sidebar.classList.toggle('active');
+            sidebarOverlay.classList.toggle('active');
+            document.body.classList.toggle('no-scroll');
+        }
+
+        if(menuToggle) menuToggle.addEventListener('click', toggleSidebar);
+        if(sidebarClose) sidebarClose.addEventListener('click', toggleSidebar);
+        if(sidebarOverlay) sidebarOverlay.addEventListener('click', toggleSidebar);
+    
+        function loadUserData() {
+            const name = localStorage.getItem('loggedInUserName');
+            const email = localStorage.getItem('loggedInUserEmail');
+            
+            if (name) {
+                const sName = document.getElementById('sidebarName');
+                const hName = document.getElementById('headerName');
+                const oName = document.getElementById('overviewName');
+                
+                if (sName) sName.innerText = name;
+                if (hName) hName.innerText = name;
+                if (oName) oName.innerText = name;
+                
+                // Update avatar initial
+                const avatars = document.querySelectorAll('.avatar');
+                avatars.forEach(av => {
+                    av.innerText = name.charAt(0).toUpperCase();
+                });
+            }
+            if (email) {
+                const sEmail = document.getElementById('sidebarEmail');
+                if (sEmail) sEmail.innerText = email;
+            }
+        }
+        
+        // Run on load
+        document.addEventListener('DOMContentLoaded', loadUserData);
+        
+    </script>
 </body>
 </html>

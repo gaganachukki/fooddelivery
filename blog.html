@@ -26,6 +26,7 @@
                 <a href="blog.html" class="nav-blog active">Blog</a>
                 <a href="services.html" class="nav-services">Services</a>
                 <a href="contact.html" class="nav-contact">Contact</a>
+            <a href="Login.html" class="login-btn-mobile">Login</a>
             </nav>
 
             <div class="nav-actions">
@@ -45,7 +46,7 @@
                 </a>
             </div>
 
-            <button class="mobile-menu-toggle" aria-label="Toggle Navigation" aria-expanded="false" onclick="document.querySelector('.navbar').classList.toggle('active')">
+            <button class="mobile-menu-toggle" aria-label="Toggle Navigation" aria-expanded="false">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="3" y1="12" x2="21" y2="12"></line>
                     <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -67,25 +68,25 @@
                 <span class="blog-date">July 15, 2026</span>
                 <h3 class="blog-title">10 Healthy Recipes for Busy Weeknights</h3>
                 <p class="blog-excerpt">Eating healthy doesn't have to take hours. Check out these quick, delicious recipes you can make in under 30 minutes.</p>
-                <a href="#" class="read-more">Read More &rarr;</a>
+                <a href="404.html" class="read-more">Read More &rarr;</a>
             </div>
         </div>
         <div class="blog-card">
-            <img src="assets/hero_food.webp" alt="Blog Post 2">
+            <img src="assets/blog_card_2.webp" alt="Blog Post 2">
             <div class="blog-content">
                 <span class="blog-date">July 10, 2026</span>
                 <h3 class="blog-title">Behind the Scenes: Sourcing Fresh Groceries</h3>
                 <p class="blog-excerpt">Ever wonder where our produce comes from? We take you on a journey to the local farms that supply Stackly.</p>
-                <a href="#" class="read-more">Read More &rarr;</a>
+                <a href="404.html" class="read-more">Read More &rarr;</a>
             </div>
         </div>
         <div class="blog-card">
-            <img src="assets/hero_food.webp" alt="Blog Post 3">
+            <img src="assets/blog_card_3.webp" alt="Blog Post 3">
             <div class="blog-content">
                 <span class="blog-date">July 5, 2026</span>
                 <h3 class="blog-title">The Art of Food Plating Like a Pro</h3>
                 <p class="blog-excerpt">Learn the secrets to making your home-cooked meals look like they came out of a Michelin-star kitchen.</p>
-                <a href="#" class="read-more">Read More &rarr;</a>
+                <a href="404.html" class="read-more">Read More &rarr;</a>
             </div>
         </div>
     </section>
@@ -93,6 +94,57 @@
     <script src="js/script.js"></script>
 
     <!-- Footer -->
+    
+    <!-- Trending Topics Section -->
+    <section class="trending-topics-section" id="topics">
+        <div style="text-align: center; margin-bottom: 40px;">
+            <span class="headline-tag">Explore</span>
+            <h2 class="reveal">Trending Topics</h2>
+        </div>
+        <div class="topics-masonry reveal">
+            <a href="404.html" class="topic-pill" style="font-size: 24px; padding: 15px 30px;">#HealthyEating</a>
+            <a href="404.html" class="topic-pill" style="font-size: 16px; padding: 10px 20px;">#StreetFood</a>
+            <a href="404.html" class="topic-pill" style="font-size: 20px; padding: 12px 25px;">#MidnightCravings</a>
+            <a href="404.html" class="topic-pill" style="font-size: 18px; padding: 12px 22px;">#VeganLife</a>
+            <a href="404.html" class="topic-pill" style="font-size: 22px; padding: 14px 28px;">#SpicyFood</a>
+            <a href="404.html" class="topic-pill" style="font-size: 16px; padding: 10px 20px;">#Desserts</a>
+            <a href="404.html" class="topic-pill" style="font-size: 20px; padding: 12px 25px;">#LocalFarms</a>
+        </div>
+    </section>
+
+    <!-- Foodie Newsletter Section -->
+    <section class="blog-newsletter-section" id="newsletter">
+        <div class="newsletter-banner reveal">
+            <div class="newsletter-content">
+                <h2>Join the Stackly Foodie Club</h2>
+                <p>Get weekly recipes, secret menus, and exclusive discount codes delivered straight to your inbox.</p>
+                <form class="newsletter-form" onsubmit="event.preventDefault()">
+                    <input type="email" placeholder="Enter your email address" required>
+                    <button type="submit">Subscribe</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Culinary Video Section -->
+    <section class="culinary-video-section" id="featured-video">
+        <div style="text-align: center; margin-bottom: 40px;">
+            <span class="headline-tag">Behind the Scenes</span>
+            <h2 class="reveal">Chef's Table Interview</h2>
+        </div>
+        <div class="video-container reveal">
+            <div class="video-thumbnail" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url('assets/menu_hero.webp');">
+                <a href="404.html" class="play-btn">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="white" stroke="white" stroke-width="2"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg>
+                </a>
+            </div>
+            <div class="video-info">
+                <h3>A Day in the Life of a Master Pizzaiolo</h3>
+                <p>We spent a day with Chef Marco at Napoli Kitchen to discover the secrets behind their famous woodfire crust. Watch the exclusive interview and learn how they source their ingredients locally.</p>
+            </div>
+        </div>
+    </section>
+
     <footer class="footer">
         <div class="footer-grid">
             <div class="footer-brand">
@@ -100,32 +152,32 @@
                     <img src="assets/logo.webp" alt="Stackly Logo" style="height: 50px; width: auto; margin-bottom: 10px;">
                     
                 </div>
-                <p>Premium event management platform delivering unforgettable experiences worldwide. Your vision, our expertise.</p>
+                <p>Premium food and grocery delivery platform delivering fresh culinary experiences right to your doorstep. Your cravings, our expertise.</p>
                 <div class="social-links">
-                    <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
-                    <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
-                    <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
-                    <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                    <a href="404.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                    <a href="404.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
+                    <a href="404.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                    <a href="404.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
                 </div>
             </div>
             <div class="footer-links">
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="#">Events</a></li>
+                    <li><a href="404.html">Events</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="#">Gallery</a></li>
+                    <li><a href="404.html">Gallery</a></li>
                 </ul>
             </div>
             <div class="footer-links">
                 <h3>Services</h3>
                 <ul>
-                    <li><a href="#">Wedding Planning</a></li>
-                    <li><a href="#">Corporate Events</a></li>
-                    <li><a href="#">Concert Management</a></li>
-                    <li><a href="#">Birthday Parties</a></li>
-                    <li><a href="#">Gala Events</a></li>
+                    <li><a href="404.html">Food Delivery</a></li>
+                    <li><a href="404.html">Grocery Delivery</a></li>
+                    <li><a href="404.html">Dine-in Reservations</a></li>
+                    <li><a href="404.html">Corporate Catering</a></li>
+                    <li><a href="404.html">Party Orders</a></li>
                 </ul>
             </div>
             <div class="footer-contact">
@@ -139,9 +191,9 @@
         <div class="footer-bottom">
             <p>&copy; 2026 Stackly. All rights reserved.</p>
             <div class="footer-bottom-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">Cookie Policy</a>
+                <a href="404.html">Privacy Policy</a>
+                <a href="404.html">Terms of Service</a>
+                <a href="404.html">Cookie Policy</a>
             </div>
         </div>
         <a href="#" class="scroll-top">
@@ -149,5 +201,13 @@
         </a>
     </footer>
 
+
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+    <!-- Stackly Animations -->
+    <script src="js/animations.js" defer></script>
 </body>
 </html>

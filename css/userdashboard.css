@@ -85,7 +85,7 @@ body {
 
 .sidebar-menu {
     list-style: none;
-    padding: 0 15px;
+    padding: 0;
     margin: 0;
     
 }
@@ -95,20 +95,24 @@ body {
 }
 
 .sidebar-menu a {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-    padding: 10px 15px;
-    color: var(--dash-text-muted);
+    display: block;
+    padding: 12px 25px;
+    color: #e2e8f0;
     text-decoration: none;
-    border-radius: 8px;
+    font-size: 15px;
     font-weight: 500;
     transition: all 0.3s ease;
 }
 
-.sidebar-menu a:hover, .sidebar-menu a.active {
-    background: var(--dash-accent-light);
-    color: var(--dash-accent);
+.sidebar-menu a:hover {
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+}
+
+.sidebar-menu a.active {
+    background: #2563eb;
+    color: white;
+    font-weight: 600;
 }
 
 .sidebar-menu a svg {
@@ -117,11 +121,11 @@ body {
 }
 
 .sidebar-label {
-    padding: 10px 25px 5px;
-    font-size: 10px;
+    padding: 25px 25px 10px;
+    font-size: 11px;
     font-weight: 700;
     text-transform: uppercase;
-    color: #555566;
+    color: #10b981;
     letter-spacing: 1px;
 }
 
@@ -153,6 +157,15 @@ body {
     display: flex;
     align-items: center;
     gap: 20px;
+}
+
+.mobile-header-logo {
+    display: none;
+    height: 36px;
+}
+
+.mobile-search-btn {
+    display: none;
 }
 
 .header-btn {
@@ -315,3 +328,184 @@ body {
 ::-webkit-scrollbar-track { background: var(--dash-bg); }
 ::-webkit-scrollbar-thumb { background: var(--dash-border); border-radius: 3px; }
 ::-webkit-scrollbar-thumb:hover { background: #444455; }
+
+.dash-menu-toggle {
+    display: none;
+    background: transparent;
+    border: none;
+    color: var(--dash-text-main);
+    cursor: pointer;
+    padding: 5px;
+}
+.sidebar-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0,0,0,0.5);
+    z-index: 9998;
+}
+.sidebar-overlay.active {
+    display: block;
+}
+.sidebar-close {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    body {
+        flex-direction: column;
+    }
+    .dash-menu-toggle {
+        display: block;
+    }
+    .sidebar-close {
+        display: block;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: transparent;
+        border: none;
+        color: white;
+        cursor: pointer;
+    }
+    .sidebar {
+        width: 280px;
+        position: fixed;
+        left: -280px;
+        top: 0;
+        bottom: 0;
+        background-color: var(--dash-sidebar) !important;
+        z-index: 9999;
+        transition: left 0.3s ease;
+        overflow-y: auto;
+    }
+    .sidebar.active {
+        left: 0;
+    }
+    .sidebar ul {
+        display: block;
+        overflow: visible; flex-shrink: 0;
+        padding: 0 15px;
+    }
+    .sidebar ul li {
+        flex: none;
+    }
+    .sidebar-header h2 {
+        display: none;
+    }
+    .main-content {
+        margin-left: 0;
+        padding: 15px;
+    }
+    .admin-header, .header {
+        flex-direction: row;
+        flex-wrap: nowrap;
+        justify-content: space-between;
+        align-items: center;
+        gap: 15px;
+        padding: 10px 15px;
+    }
+    .mobile-header-logo {
+        display: block;
+    }
+    .desktop-header-title {
+        display: none !important;
+    }
+    .mobile-search-btn {
+        display: flex;
+    }
+    .user-profile-btn {
+        background: transparent !important;
+        border: none !important;
+        padding: 0 !important;
+    }
+    .user-profile-btn .avatar {
+        width: 35px !important;
+        height: 35px !important;
+        background: #2563eb !important;
+    }
+    .search-bar {
+        display: none !important;
+    }
+    .header-right {
+        gap: 10px;
+    }
+    .header h1, .admin-header h1 {
+        font-size: 16px !important;
+    }
+    .user-name-text {
+        display: none !important;
+    }
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+    .section-grid {
+        grid-template-columns: 1fr;
+    }
+    .panel {
+        min-width: 0;
+        overflow: visible; flex-shrink: 0;
+    }
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+    .search-bar input {
+        width: 100% !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .sidebar ul li span {
+        display: none;
+    }
+    .welcome-sec h2 {
+        font-size: 24px;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+}
+
+
+/* Tab Navigation Styles */
+.tab-content {
+    display: none;
+    animation: fadeIn 0.3s ease-in-out;
+}
+.tab-content.active {
+    display: block;
+}
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Prevent body scroll when mobile sidebar is open */
+body.no-scroll {
+    overflow: hidden;
+    height: 100vh;
+}
+
+
+/* Fix crushed avatar and overflowing text in sidebar user profile */
+.sidebar-user .avatar {
+    flex-shrink: 0 !important;
+}
+
+.sidebar-user .info {
+    min-width: 0;
+    flex: 1;
+}
+
+.sidebar-user .info h4,
+.sidebar-user .info > div:nth-child(2) {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: block;
+}

@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stackly - Premium Food & Grocery Delivery</title>
+    <title>Stackly - Premium Food Delivery</title>
     <meta name="description"
         content="Stackly delivers the finest food and freshest groceries to your doorstep. Order from top-rated restaurants in your city.">
     <link rel="stylesheet" href="css/global.css">
@@ -541,6 +541,7 @@
                 <a href="blog.html" class="nav-blog">Blog</a>
                 <a href="services.html" class="nav-services">Services</a>
                 <a href="contact.html" class="nav-contact">Contact</a>
+            <a href="Login.html" class="login-btn-mobile">Login</a>
             </nav>
 
             <div class="nav-actions">
@@ -560,7 +561,7 @@
                 </a>
             </div>
 
-            <button class="mobile-menu-toggle" aria-label="Toggle Navigation" aria-expanded="false" onclick="document.querySelector('.navbar').classList.toggle('active')">
+            <button class="mobile-menu-toggle" aria-label="Toggle Navigation" aria-expanded="false">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
                     <line x1="3" y1="12" x2="21" y2="12"></line>
                     <line x1="3" y1="6" x2="21" y2="6"></line>
@@ -616,7 +617,7 @@
                     </span>
                     <h2>Food Delivery</h2>
                     <p>From local gems to fine dining stars</p>
-                    <button>Explore Restaurants</button>
+                    <button onclick="window.location.href='404.html'">Explore Restaurants</button>
                 </div>
             </div>
             <div class="hero-card" onclick="window.location.href='404.html'">
@@ -633,7 +634,7 @@
                     </span>
                     <h2>Instamart</h2>
                     <p>Daily essentials & organic produce</p>
-                    <button>Shop Groceries</button>
+                    <button onclick="window.location.href='404.html'">Shop Groceries</button>
                 </div>
             </div>
         </div>
@@ -653,12 +654,12 @@
         <h2 class="reveal">What's on your mind?</h2>
 
         <!-- Categories Banner -->
-        <div class="categories-banner reveal"
-            style="transition-delay:0.1s; width: 100%;background-size: cover;background-repeat: no-repeat;min-height: 500px;"
+        <div class="categories-banner reveal categories-banner-large"
+            style="transition-delay:0.1s; width: 100%;background-size: cover;background-repeat: no-repeat;"
             onclick="window.location.href='menu.html'">
-            <img src="assets/asian-food-background-various-ingredients-600nw-1383065213.webp"
+            <img class="categories-banner-img" src="assets/asian-food-background-various-ingredients-600nw-1383065213.webp"
                 alt="Explore all food categories — biryani, burger, pizza, dosa, salad, coffee, donut and cake"
-                loading="lazy" style="width: 100%;height: 500px;">
+                loading="lazy">
             <div class="categories-banner-overlay">
                 <h3>Explore Every Craving</h3>
                 <p>From street food to fine dining — all in one place.</p>
@@ -667,45 +668,87 @@
             <span class="categories-banner-badge">Categories</span>
         </div>
 
-        <div class="food-grid" id="food-grid-main" style="margin-right: 10px;">
-            <div class="food reveal" onclick="window.location.href='menu.html?category=Indian'">
+        
+        
+        <div class="marquee-wrapper" style="margin-top: 30px;">
+            <div class="marquee-track">
+                <div class="food" onclick="window.location.href='menu.html?category=Indian'">
                 <img src="assets/food_biryani.webp" alt="Traditional spicy chicken biryani" loading="lazy">
                 <p>Biryani</p>
             </div>
-            <div class="food reveal" style="transition-delay:0.05s;"
+            <div class="food" 
                 onclick="window.location.href='menu.html?category=Fast Food'">
                 <img src="assets/food_burger.webp" alt="Juicy grilled beef burger with fresh lettuce"
                     loading="lazy">
                 <p>Burger</p>
             </div>
-            <div class="food reveal" style="transition-delay:0.1s;"
+            <div class="food" 
                 onclick="window.location.href='menu.html?category=Fast Food'">
                 <img src="assets/food_pizza.webp" alt="Freshly baked pepperoni pizza with melting cheese"
                     loading="lazy">
                 <p>Pizza</p>
             </div>
-            <div class="food reveal" style="transition-delay:0.15s;"
+            <div class="food" 
                 onclick="window.location.href='menu.html?category=Indian'">
                 <img src="assets/food_dosa.webp" alt="Crispy golden South Indian paper dosa" loading="lazy">
                 <p>Dosa</p>
             </div>
-            <div class="food reveal" style="transition-delay:0.2s;"
+            <div class="food" 
                 onclick="window.location.href='menu.html?category=Main Course'">
                 <img src="assets/food_salad.webp" alt="Fresh garden green salad with vegetables" loading="lazy">
                 <p>Salad</p>
             </div>
-            <div class="food reveal" style="transition-delay:0.25s;"
+            <div class="food" 
                 onclick="window.location.href='menu.html?category=Beverages'">
                 <img src="assets/food_coffee.webp" alt="Aromatic hot coffee with latte art" loading="lazy">
                 <p>Coffee</p>
             </div>
-            <div class="food reveal" style="transition-delay:0.3s;"
+            <div class="food" 
                 onclick="window.location.href='menu.html?category=Desserts'">
                 <img src="assets/food_donut.webp" alt="Glazed sweet donut with chocolate drizzle" loading="lazy">
                 <p>Donut</p>
             </div>
-
+            </div>
+            <div class="marquee-track">
+                <div class="food" onclick="window.location.href='menu.html?category=Indian'">
+                <img src="assets/food_biryani.webp" alt="Traditional spicy chicken biryani" loading="lazy">
+                <p>Biryani</p>
+            </div>
+            <div class="food" 
+                onclick="window.location.href='menu.html?category=Fast Food'">
+                <img src="assets/food_burger.webp" alt="Juicy grilled beef burger with fresh lettuce"
+                    loading="lazy">
+                <p>Burger</p>
+            </div>
+            <div class="food" 
+                onclick="window.location.href='menu.html?category=Fast Food'">
+                <img src="assets/food_pizza.webp" alt="Freshly baked pepperoni pizza with melting cheese"
+                    loading="lazy">
+                <p>Pizza</p>
+            </div>
+            <div class="food" 
+                onclick="window.location.href='menu.html?category=Indian'">
+                <img src="assets/food_dosa.webp" alt="Crispy golden South Indian paper dosa" loading="lazy">
+                <p>Dosa</p>
+            </div>
+            <div class="food" 
+                onclick="window.location.href='menu.html?category=Main Course'">
+                <img src="assets/food_salad.webp" alt="Fresh garden green salad with vegetables" loading="lazy">
+                <p>Salad</p>
+            </div>
+            <div class="food" 
+                onclick="window.location.href='menu.html?category=Beverages'">
+                <img src="assets/food_coffee.webp" alt="Aromatic hot coffee with latte art" loading="lazy">
+                <p>Coffee</p>
+            </div>
+            <div class="food" 
+                onclick="window.location.href='menu.html?category=Desserts'">
+                <img src="assets/food_donut.webp" alt="Glazed sweet donut with chocolate drizzle" loading="lazy">
+                <p>Donut</p>
+            </div>
+            </div>
         </div>
+    
     </section>
 
     <!-- Grocery -->
@@ -720,47 +763,76 @@
             Grocery
         </span>
         <h2 class="reveal">Shop groceries on Stackly</h2>
-        <div class="grocery-grid" id="grocery-grid-main">
-            <div class="grocery reveal" onclick="window.location.href='404.html'">
+        
+        <div class="marquee-wrapper" id="grocery-grid-main" style="margin-top: 30px;">
+            <div class="marquee-track">
+                <div class="grocery" onclick="window.location.href='404.html'">
                 <img src="assets/grocery_veg.webp" alt="Fresh local farm vegetables" loading="lazy">
                 <p>Vegetables</p>
             </div>
-            <div class="grocery reveal" style="transition-delay:0.1s;" onclick="window.location.href='404.html'">
+            <div class="grocery"  onclick="window.location.href='404.html'">
                 <img src="assets/grocery_fruits.webp" alt="Seasonal tropical and local fruits" loading="lazy">
                 <p>Fruits</p>
             </div>
-            <div class="grocery reveal" style="transition-delay:0.2s;" onclick="window.location.href='404.html'">
+            <div class="grocery"  onclick="window.location.href='404.html'">
                 <img src="assets/grocery_dairy.webp" alt="Fresh farm milk, eggs and butter" loading="lazy">
                 <p>Dairy & Eggs</p>
             </div>
-            <div class="grocery reveal" style="transition-delay:0.3s;" onclick="window.location.href='404.html'">
+            <div class="grocery"  onclick="window.location.href='404.html'">
                 <img src="assets/grocery_rice.webp" alt="Premium basmati rice and organic atta flour" loading="lazy">
                 <p>Rice & Atta</p>
             </div>
-            <div class="grocery reveal" style="transition-delay:0.4s;" onclick="window.location.href='404.html'">
+            <div class="grocery"  onclick="window.location.href='404.html'">
                 <img src="assets/grocery_dry_fruits.webp" alt="Sorted dry fruits and nuts" loading="lazy">
                 <p>Dry Fruits</p>
             </div>
-            <div class="grocery reveal" style="transition-delay:0.5s;" onclick="window.location.href='404.html'">
+            <div class="grocery"  onclick="window.location.href='404.html'">
                 <img src="assets/grocery_oil.webp" alt="Cold-pressed cooking oils and ghee" loading="lazy">
                 <p>Oils & Ghee</p>
             </div>
+            </div>
+            <div class="marquee-track">
+                <div class="grocery" onclick="window.location.href='404.html'">
+                <img src="assets/grocery_veg.webp" alt="Fresh local farm vegetables" loading="lazy">
+                <p>Vegetables</p>
+            </div>
+            <div class="grocery"  onclick="window.location.href='404.html'">
+                <img src="assets/grocery_fruits.webp" alt="Seasonal tropical and local fruits" loading="lazy">
+                <p>Fruits</p>
+            </div>
+            <div class="grocery"  onclick="window.location.href='404.html'">
+                <img src="assets/grocery_dairy.webp" alt="Fresh farm milk, eggs and butter" loading="lazy">
+                <p>Dairy & Eggs</p>
+            </div>
+            <div class="grocery"  onclick="window.location.href='404.html'">
+                <img src="assets/grocery_rice.webp" alt="Premium basmati rice and organic atta flour" loading="lazy">
+                <p>Rice & Atta</p>
+            </div>
+            <div class="grocery"  onclick="window.location.href='404.html'">
+                <img src="assets/grocery_dry_fruits.webp" alt="Sorted dry fruits and nuts" loading="lazy">
+                <p>Dry Fruits</p>
+            </div>
+            <div class="grocery"  onclick="window.location.href='404.html'">
+                <img src="assets/grocery_oil.webp" alt="Cold-pressed cooking oils and ghee" loading="lazy">
+                <p>Oils & Ghee</p>
+            </div>
+            </div>
         </div>
+    
+    
     </section>
 
     <!-- Popular Restaurants -->
     <section class="popular-section" id="restaurants">
-        <div style="display: flex; justify-content: space-between; align-items: flex-end; margin-bottom: 40px;">
+        <div class="section-header-flex">
             <div>
                 <span class="headline-tag">Featured</span>
                 <h2 class="reveal" style="text-align: left; margin-bottom: 0;">Popular Restaurants</h2>
             </div>
-            <a href="404.html" class="reveal"
-                style="padding: 12px 25px; border-radius: 30px; border: 1.5px solid var(--primary); background: transparent; color: var(--primary); font-weight: 700; cursor: pointer; transition: var(--transition); text-decoration: none; font-size: 14px;">View
-                All →</a>
+            <a href="404.html" class="reveal view-all-btn">View All &rarr;</a>
         </div>
         <div class="popular-scroll">
-            <div class="card reveal" style="min-width: 320px;"
+            <div class="card reveal"
                 onclick="window.location.href='menu.html?category=Indian'">
                 <img src="assets/chef_exp_1.webp"
                     alt="The Royal Kitchen restaurant interior" class="card-img" loading="lazy">
@@ -783,7 +855,7 @@
                         Kitchen</button>
                 </div>
             </div>
-            <div class="card reveal" style="min-width: 320px; transition-delay: 0.1s;"
+            <div class="card reveal" style="transition-delay: 0.1s;"
                 onclick="window.location.href='menu.html?category=Fast Food'">
                 <img src="assets/chef_exp_2.webp"
                     alt="Classic Grill House restaurant" class="card-img" loading="lazy">
@@ -807,7 +879,7 @@
                         House</button>
                 </div>
             </div>
-            <div class="card reveal" style="min-width: 320px; transition-delay: 0.2s;"
+            <div class="card reveal" style="transition-delay: 0.2s;"
                 onclick="window.location.href='menu.html?category=Fast Food'">
                 <img src="assets/chef_exp_3.webp"
                     alt="Pizza Palace restaurant" class="card-img" loading="lazy">
@@ -830,6 +902,85 @@
                         onclick="event.stopPropagation(); window.location.href='menu.html?category=Fast Food'">Explore
                         Menu</button>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    
+    <!-- How It Works Section -->
+    <section class="how-it-works-section" id="how-it-works">
+        <div style="text-align: center; margin-bottom: 50px;">
+            <span class="headline-tag">Process</span>
+            <h2 class="reveal">How Stackly Works</h2>
+        </div>
+        <div class="steps-grid reveal">
+            <div class="step-card">
+                <div class="step-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path><polyline points="3.27 6.96 12 12.01 20.73 6.96"></polyline><line x1="12" y1="22.08" x2="12" y2="12"></line></svg>
+                </div>
+                <h3>1. Browse Menus</h3>
+                <p>Explore thousands of dishes from top local restaurants and kitchens.</p>
+            </div>
+            <div class="step-card" style="transition-delay: 0.1s;">
+                <div class="step-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg>
+                </div>
+                <h3>2. Fast Ordering</h3>
+                <p>Customize your meal and checkout securely in seconds.</p>
+            </div>
+            <div class="step-card" style="transition-delay: 0.2s;">
+                <div class="step-icon">
+                    <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14"></path><path d="M12 5l7 7-7 7"></path></svg>
+                </div>
+                <h3>3. Doorstep Delivery</h3>
+                <p>Enjoy live tracking while our rider brings your food piping hot.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Flash Deals Section -->
+    <section class="flash-deals-section" id="flash-deals">
+        <div class="flash-deals-header section-header-flex">
+            <div>
+                <span class="headline-tag">Limited Time</span>
+                <h2 class="reveal">Flash Deals & Offers</h2>
+            </div>
+            <a href="menu.html" class="view-all-btn">View All Deals &rarr;</a>
+        </div>
+        <div class="deals-grid reveal">
+            <div class="deal-card" style="background: linear-gradient(135deg, #f87e0a 0%, #e06d04 100%);">
+                <div class="deal-content">
+                    <h3>50% OFF First Order</h3>
+                    <p>Use code: WELCOME50</p>
+                    <button onclick="window.location.href='404.html'">Claim Now</button>
+                </div>
+            </div>
+            <div class="deal-card" style="background: linear-gradient(135deg, #2ecc71 0%, #27ae60 100%);">
+                <div class="deal-content">
+                    <h3>Free Delivery Tuesday</h3>
+                    <p>On orders above $20</p>
+                    <button onclick="window.location.href='404.html'">Order Now</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rewards Program Section -->
+    <section class="rewards-section" id="rewards">
+        <div class="rewards-container reveal">
+            <div class="rewards-text">
+                <span class="headline-tag" style="background: rgba(255,255,255,0.2); color: white;">Loyalty</span>
+                <h2>Stackly Rewards Program</h2>
+                <p>Earn points on every order. Redeem them for free meals, exclusive discounts, and VIP delivery perks.</p>
+                <ul class="rewards-list">
+                    <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> 1 Point for every $1 spent</li>
+                    <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Free Birthday Meal</li>
+                    <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="var(--primary)" stroke-width="2"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path><polyline points="22 4 12 14.01 9 11.01"></polyline></svg> Priority Support</li>
+                </ul>
+                <button class="primary-btn white-btn" style="margin-top: 20px;" onclick="window.location.href='404.html'">Join for Free</button>
+            </div>
+            <div class="rewards-image">
+                <img src="assets/about_bg.webp" alt="Rewards" loading="lazy" style="border-radius: 20px; width: 100%; height: 300px; object-fit: cover;">
             </div>
         </div>
     </section>
@@ -975,32 +1126,32 @@
                     <img src="assets/logo.webp" alt="Stackly Logo" style="height: 50px; width: auto; margin-bottom: 10px;">
                     
                 </div>
-                <p>Premium event management platform delivering unforgettable experiences worldwide. Your vision, our expertise.</p>
+                <p>Premium food and grocery delivery platform delivering fresh culinary experiences right to your doorstep. Your cravings, our expertise.</p>
                 <div class="social-links">
-                    <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
-                    <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
-                    <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
-                    <a href="#"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+                    <a href="404.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"></path></svg></a>
+                    <a href="404.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a>
+                    <a href="404.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+                    <a href="404.html"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
                 </div>
             </div>
             <div class="footer-links">
                 <h3>Quick Links</h3>
                 <ul>
                     <li><a href="index.html">Home</a></li>
-                    <li><a href="#">Events</a></li>
+                    <li><a href="404.html">Events</a></li>
                     <li><a href="about.html">About Us</a></li>
                     <li><a href="services.html">Services</a></li>
-                    <li><a href="#">Gallery</a></li>
+                    <li><a href="404.html">Gallery</a></li>
                 </ul>
             </div>
             <div class="footer-links">
                 <h3>Services</h3>
                 <ul>
-                    <li><a href="#">Wedding Planning</a></li>
-                    <li><a href="#">Corporate Events</a></li>
-                    <li><a href="#">Concert Management</a></li>
-                    <li><a href="#">Birthday Parties</a></li>
-                    <li><a href="#">Gala Events</a></li>
+                    <li><a href="404.html">Food Delivery</a></li>
+                    <li><a href="404.html">Grocery Delivery</a></li>
+                    <li><a href="404.html">Dine-in Reservations</a></li>
+                    <li><a href="404.html">Corporate Catering</a></li>
+                    <li><a href="404.html">Party Orders</a></li>
                 </ul>
             </div>
             <div class="footer-contact">
@@ -1014,9 +1165,9 @@
         <div class="footer-bottom">
             <p>&copy; 2026 Stackly. All rights reserved.</p>
             <div class="footer-bottom-links">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Terms of Service</a>
-                <a href="#">Cookie Policy</a>
+                <a href="404.html">Privacy Policy</a>
+                <a href="404.html">Terms of Service</a>
+                <a href="404.html">Cookie Policy</a>
             </div>
         </div>
         <a href="#" class="scroll-top">
@@ -1026,6 +1177,15 @@
 
 
     <script src="js/script.js"></script>
+
+
+    <!-- GSAP + ScrollTrigger -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
+    <!-- Particles.js -->
+    <script src="https://cdn.jsdelivr.net/npm/particles.js@2.0.0/particles.min.js" defer></script>
+    <!-- Stackly Animations -->
+    <script src="js/animations.js" defer></script>
 </body>
 
 </html>

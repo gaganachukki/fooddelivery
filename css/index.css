@@ -174,7 +174,7 @@
 
 /* Grid Sections */
 .food-section, .grocery-section, .menu-section {
-    padding: 80px;
+    padding: 50px 80px 20px;
 }
 
 .section-title {
@@ -273,7 +273,7 @@
 
 /* Testimonial Section */
 .testimonial-section {
-    padding: 30px 80px 100px;
+    padding: 30px 80px 40px;
     background: var(--bg-light);
 }
 
@@ -315,7 +315,7 @@
 
 /* Newsletter Section */
 .newsletter-section {
-    padding: 100px 80px;
+    padding: 50px 80px;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -323,7 +323,7 @@
 
 .newsletter-card {
     background: var(--secondary);
-    padding: 80px;
+    padding: 50px;
     border-radius: 40px;
     color: white;
     max-width: 1000px;
@@ -424,7 +424,7 @@
 
 /* Popular Section */
 .popular-section {
-    padding: 100px 80px 30px;
+    padding: 30px 80px 30px;
     background: var(--bg-light);
 }
 
@@ -448,5 +448,80 @@
 
 .popular-scroll .card {
     min-width: 320px;
+}
+
+/* Replacements for inline styles */
+.flash-deals-header {
+    padding: 0 80px;
+}
+
+.deals-grid {
+    padding: 0 80px;
+}
+
+.categories-banner-large {
+    height: 280px !important;
+    min-height: 280px;
+}
+
+.categories-banner-large img {
+    width: 100%;
+    height: 280px !important;
+    min-height: 280px;
+    object-fit: cover;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .hero-img-main {
+        width: 100%;
+        max-width: 300px;
+        height: auto;
+    }
+    .popular-scroll {
+        flex-direction: column;
+        overflow-x: visible;
+        gap: 20px;
+    }
+    .popular-scroll .card {
+        min-width: 100% !important;
+        max-width: 100% !important;
+    }
+    .newsletter-card {
+        padding: 30px 20px;
+    }
+    .categories-banner, .categories-banner img, .categories-banner-img, .categories-banner-large, .categories-banner-large img {
+        height: auto !important;
+        max-height: 300px;
+        min-height: 0 !important;
+    }
+    .food-section, .grocery-section, .testimonial-section, .cities, .popular-section, .menu-section, .newsletter-section {
+        padding: 30px 20px !important;
+    }
+    .flash-deals-header {
+        padding: 0 20px !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 15px;
+    }
+    .deals-grid {
+        padding: 0 20px !important;
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .food-section, .grocery-section, .testimonial-section, .cities, .popular-section, .menu-section, .newsletter-section {
+        padding: 20px 15px !important;
+    }
+    .flash-deals-header {
+        padding: 0 15px !important;
+    }
+    .deals-grid {
+        padding: 0 15px !important;
+    }
+    .hero-img-main {
+        max-width: 250px;
+    }
 }
 

@@ -11,3 +11,49 @@
     color: white;
     position: relative;
 }
+
+.contact-section { padding: 50px 80px; }
+.map-section { padding: 0 80px 50px; }
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.contact-social {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.contact-social a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 20px;
+    border-radius: 30px;
+    background: #f8f9fa;
+    color: var(--text-main);
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid #eaeaea;
+}
+
+.contact-social a:hover {
+    background: var(--primary);
+    color: white;
+    transform: translateY(-3px);
+    border-color: var(--primary);
+}
+
+@media (max-width: 768px) {
+    .contact-section { padding: 30px 20px; }
+    .contact-grid { grid-template-columns: 1fr; gap: 20px; }
+    .map-section { padding: 0 20px 30px; }
+    .map-section iframe { height: 300px; }
+    .about-hero, .contact-hero, .menu-hero { padding: 80px 20px !important; }
+}

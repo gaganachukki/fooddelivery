@@ -32,7 +32,7 @@ body{
     height:100%;
     background:
         radial-gradient(circle at center,
-        rgba(212,175,55,0.12),
+        rgba(248, 126, 10,0.12),
         transparent 60%);
 }
 
@@ -50,7 +50,7 @@ body{
     display:flex;
     align-items:center;
     gap:10px;
-    color:#d4af37;
+    color:#f87e0a;
     font-size:1.5rem;
     font-weight:700;
     margin-bottom:40px;
@@ -80,8 +80,8 @@ body{
 .error-text h1{
     font-size:9rem;
     line-height:1;
-    color:#d4af37;
-    text-shadow:0 0 20px rgba(212,175,55,0.35);
+    color:#f87e0a;
+    text-shadow:0 0 20px rgba(248, 126, 10,0.35);
 }
 
 .error-text h2{
@@ -118,13 +118,13 @@ body{
 }
 
 .primary-btn{
-    background:#d4af37;
-    color:#000;
+    background:#f87e0a;
+    color:#fff;
 }
 
 .primary-btn:hover{
     transform:translateY(-4px);
-    box-shadow:0 10px 25px rgba(212,175,55,0.35);
+    box-shadow:0 10px 25px rgba(248, 126, 10,0.35);
 }
 
 .secondary-btn{
@@ -159,7 +159,7 @@ body{
             rgba(255,255,255,0.02)
         );
 
-    border:2px solid rgba(212,175,55,0.2);
+    border:2px solid rgba(248, 126, 10,0.2);
 
     display:flex;
     justify-content:center;
@@ -169,7 +169,7 @@ body{
 
     animation:float 4s ease-in-out infinite;
     box-shadow:
-        0 0 30px rgba(212,175,55,0.15),
+        0 0 30px rgba(248, 126, 10,0.15),
         inset 0 0 20px rgba(255,255,255,0.03);
 }
 

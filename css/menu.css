@@ -72,7 +72,7 @@
 }
 
 .filter-btn i {
-    font-size: 18px;
+    
 }
 
 
@@ -95,7 +95,7 @@
     color: var(--primary) !important;
     border: 2px solid var(--primary) !important;
     padding: 8px 20px !important;
-    font-size: 14px !important;
+     !important;
     font-weight: 600 !important;
     cursor: pointer !important;
     border-radius: 50px !important;
@@ -107,4 +107,22 @@
     color: #ffffff !important;
     transform: translateY(-2px);
     box-shadow: 0 6px 15px rgba(248, 126, 10, 0.25) !important;
+}
+
+.filter-buttons-wrapper { padding: 40px 80px 30px; }
+.chef-recs-header { padding: 0 80px; }
+
+@media (max-width: 768px) {
+    .filter-buttons-wrapper { 
+        padding: 20px; 
+        overflow-x: auto; 
+        flex-wrap: nowrap !important; 
+        justify-content: flex-start !important; 
+    }
+    .menu-section { padding: 20px; }
+    .menu-grid { 
+        grid-template-columns: 1fr; 
+        padding: 20px; 
+    }
+    .chef-recs-header { padding: 0 20px; }
 }
