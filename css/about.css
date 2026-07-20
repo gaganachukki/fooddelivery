@@ -9,7 +9,7 @@
 .stat p { color: var(--text-main); font-weight: 500; margin-top: 5px;  }
 /* About/Contact Heroes */
 .about-hero, .contact-hero, .menu-hero {
-    padding: 120px 20px;
+    padding: 80px 20px;
     text-align: center;
     color: white;
     position: relative;
@@ -121,7 +121,6 @@
         text-align: center;
     }
     .about-hero {
-        min-height: 60vh !important;
         padding: 60px 20px !important;
     }
 }
