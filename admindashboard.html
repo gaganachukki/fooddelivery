@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Admin Dashboard | Stackly</title>
     <link rel="stylesheet" href="css/admindashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
@@ -102,10 +103,25 @@
                 <h3>540</h3>
                 <p>Active Users</p>
                 <div class="stat-trend">
-                    ↑ 24 new today
+                      24 new today
                 </div>
             </div>
 
+        </div>
+
+        <div class="section-grid" style="margin-bottom: 25px;">
+            <div class="panel">
+                <h3 style="margin-top: 0; margin-bottom: 20px;">Revenue Overview</h3>
+                <div style="position: relative; height: 300px; width: 100%;">
+                    <canvas id="revenueChart"></canvas>
+                </div>
+            </div>
+            <div class="panel">
+                <h3 style="margin-top: 0; margin-bottom: 20px;">Order Status Distribution</h3>
+                <div style="position: relative; height: 300px; width: 100%;">
+                    <canvas id="orderPieChart"></canvas>
+                </div>
+            </div>
         </div>
 
         <div class="section-grid">
@@ -380,6 +396,64 @@
    </main>
 
     <script>
+        // Chart.js global defaults for dark theme
+        Chart.defaults.color = '#a0a5b1';
+        Chart.defaults.font.family = "'Inter', sans-serif";
+        
+        // Admin Revenue Bar Chart
+        const revenueCtx = document.getElementById('revenueChart').getContext('2d');
+        new Chart(revenueCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                datasets: [{
+                    label: 'Revenue (₹)',
+                    data: [4200, 5100, 3800, 6200, 7500, 10200, 8200],
+                    backgroundColor: '#f64e60',
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: 'rgba(255,255,255,0.05)' }
+                    },
+                    x: {
+                        grid: { display: false }
+                    }
+                },
+                plugins: {
+                    legend: { display: false }
+                }
+            }
+        });
+
+        // Admin Order Status Pie Chart
+        const orderCtx = document.getElementById('orderPieChart').getContext('2d');
+        new Chart(orderCtx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Delivered', 'Preparing', 'On the Way', 'Cancelled'],
+                datasets: [{
+                    data: [65, 15, 15, 5],
+                    backgroundColor: ['#1bc5bd', '#ffa800', '#3699ff', '#f64e60'],
+                    borderWidth: 0,
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                cutout: '70%',
+                plugins: {
+                    legend: { position: 'bottom' }
+                }
+            }
+        });
+
         function switchTab(tabId, element) {
             document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
             document.querySelectorAll('.sidebar-menu a').forEach(el => el.classList.remove('active'));

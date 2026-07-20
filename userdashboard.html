@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>User Dashboard | Stackly</title>
     <link rel="stylesheet" href="css/userdashboard.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
 
@@ -100,6 +101,21 @@
                 <p>Reward Points</p>
                 <div class="stat-trend down">
                     ↓ 50 pts expiring soon
+                </div>
+            </div>
+        </div>
+
+        <div class="section-grid" style="margin-bottom: 25px;">
+            <div class="panel">
+                <h3 style="margin-top: 0; margin-bottom: 20px;">Weekly Spending</h3>
+                <div style="position: relative; height: 300px; width: 100%;">
+                    <canvas id="spendingChart"></canvas>
+                </div>
+            </div>
+            <div class="panel">
+                <h3 style="margin-top: 0; margin-bottom: 20px;">Favorite Cuisines</h3>
+                <div style="position: relative; height: 300px; width: 100%;">
+                    <canvas id="cuisinePieChart"></canvas>
                 </div>
             </div>
         </div>
@@ -418,6 +434,63 @@
             }
         }
         
+        // Chart.js global defaults for dark theme
+        Chart.defaults.color = '#a0a5b1';
+        Chart.defaults.font.family = "'Inter', sans-serif";
+        
+        // User Spending Bar Chart
+        const spendingCtx = document.getElementById('spendingChart').getContext('2d');
+        new Chart(spendingCtx, {
+            type: 'bar',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                datasets: [{
+                    label: 'Spending (₹)',
+                    data: [250, 0, 450, 120, 0, 890, 320],
+                    backgroundColor: '#1bc5bd',
+                    borderRadius: 6
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                scales: {
+                    y: {
+                        beginAtZero: true,
+                        grid: { color: 'rgba(255,255,255,0.05)' }
+                    },
+                    x: {
+                        grid: { display: false }
+                    }
+                },
+                plugins: {
+                    legend: { display: false }
+                }
+            }
+        });
+
+        // User Cuisine Pie Chart
+        const cuisineCtx = document.getElementById('cuisinePieChart').getContext('2d');
+        new Chart(cuisineCtx, {
+            type: 'pie',
+            data: {
+                labels: ['Indian', 'Chinese', 'Italian', 'Fast Food'],
+                datasets: [{
+                    data: [40, 25, 20, 15],
+                    backgroundColor: ['#f64e60', '#ffa800', '#3699ff', '#1bc5bd'],
+                    borderWidth: 0,
+                    hoverOffset: 4
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: { position: 'bottom' }
+                }
+            }
+        });
+
         // Run on load
         document.addEventListener('DOMContentLoaded', loadUserData);
         
