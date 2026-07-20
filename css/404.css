@@ -18,9 +18,10 @@ body{
     position:relative;
     background:
         linear-gradient(rgba(0,0,0,0.78), rgba(0,0,0,0.82)),
-        url('assets/herofood.webp');
+        url('../assets/herofood.webp');
     background-size:cover;
     background-position:center;
+    background-attachment: fixed;
     color:white;
 }
 
@@ -272,6 +273,16 @@ body{
 
     .logo i {
         font-size: 1.6rem;
+    }
+
+    .error-image {
+        min-width: auto;
+        width: 100%;
+    }
+
+    .plate {
+        width: 200px;
+        height: 200px;
     }
 
     .btn{

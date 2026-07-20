@@ -1310,13 +1310,13 @@ padding:15px;
 
 /* Social icons hover effect */
 .footer-brand .social-links a:hover {
-    color: var(--primary) !important;
+    color: white !important;
     border-color: var(--primary) !important;
     transform: translateY(-3px) !important;
 }
 
 .footer-brand .social-links a:hover svg {
-    stroke: var(--primary) !important;
+    stroke: white !important;
 }
 
 
