@@ -13,11 +13,11 @@
 
 <div class="signup-box" style="position: relative;">
   <a href="index.html" title="Back to Home" style="position: absolute; top: 20px; right: 25px; color: #a0a5b1; font-size: 24px; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#f87e0a'" onmouseout="this.style.color='#a0a5b1'">
-    <i class="ri-close-line"></i>
+    <i class="ri-arrow-left-line"></i>
   </a>
   <h1>Create Account</h1>
 
-  <form id="signupForm">
+  <form id="signupForm" novalidate>
 
     <input type="text" id="fullName" placeholder="Full Name" required>
 
@@ -65,7 +65,114 @@
 
 </div>
 
-<script src="script.js"></script>
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const form = document.getElementById('signupForm');
+    const fullName = document.getElementById('fullName');
+    const roleSelect = document.getElementById('roleSelect');
+    const email = document.getElementById('email');
+    const password = document.getElementById('password');
+    const confirmPassword = document.getElementById('confirmPassword');
+    const terms = document.querySelector('input[type="checkbox"]');
+
+    // Prevent numbers in fullName
+    fullName.addEventListener('input', function(e) {
+        this.value = this.value.replace(/[0-9]/g, '');
+    });
+
+    function showError(inputEl, message) {
+        let errorEl = inputEl.nextElementSibling;
+        if (!errorEl || !errorEl.classList.contains('error-text')) {
+            errorEl = document.createElement('div');
+            errorEl.className = 'error-text';
+            errorEl.style.color = '#e74c3c';
+            errorEl.style.fontSize = '12px';
+            errorEl.style.marginTop = '2px';
+            errorEl.style.marginBottom = '10px';
+            errorEl.style.textAlign = 'left';
+            inputEl.parentNode.insertBefore(errorEl, inputEl.nextSibling);
+        }
+        errorEl.textContent = message;
+        errorEl.style.display = 'block';
+    }
+
+    function clearError(inputEl) {
+        let errorEl = inputEl.nextElementSibling;
+        if (errorEl && errorEl.classList.contains('error-text')) {
+            errorEl.style.display = 'none';
+        }
+    }
+
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        let isValid = true;
+
+        if (!fullName.value.trim()) {
+            showError(fullName, 'Full Name is required');
+            isValid = false;
+        } else { clearError(fullName); }
+
+        if (!roleSelect.value) {
+            showError(roleSelect, 'Please select a role');
+            isValid = false;
+        } else { clearError(roleSelect); }
+
+        if (!email.value.trim() || !email.value.includes('@')) {
+            showError(email, 'Valid Email is required');
+            isValid = false;
+        } else { clearError(email); }
+
+        if (!password.value) {
+            showError(password.parentElement, 'Password is required');
+            isValid = false;
+        } else { clearError(password.parentElement); }
+
+        if (!confirmPassword.value) {
+            showError(confirmPassword.parentElement, 'Please confirm your password');
+            isValid = false;
+        } else if (password.value !== confirmPassword.value) {
+            showError(confirmPassword.parentElement, 'Passwords do not match');
+            isValid = false;
+        } else { clearError(confirmPassword.parentElement); }
+
+        if (!terms.checked) {
+            showError(terms.parentElement, 'You must agree to the terms');
+            isValid = false;
+        } else { clearError(terms.parentElement); }
+
+        if (isValid) {
+            document.getElementById('signupMessage').textContent = 'Account created successfully!';
+            document.getElementById('signupMessage').style.color = 'green';
+            setTimeout(() => { window.location.href = 'index.html'; }, 1500);
+        }
+    });
+
+    [fullName, roleSelect, email, password, confirmPassword, terms].forEach(el => {
+        el.addEventListener('input', () => {
+            clearError(el.parentElement.classList.contains('password-field') ? el.parentElement : (el.type === 'checkbox' ? el.parentElement : el));
+        });
+    });
+
+    const togglePassword = document.getElementById('togglePassword');
+    const toggleConfirmPassword = document.getElementById('toggleConfirmPassword');
+    if (togglePassword) {
+        togglePassword.addEventListener('click', function () {
+            const type = password.getAttribute('type') === 'password' ? 'text' : 'password';
+            password.setAttribute('type', type);
+            this.classList.toggle('ri-eye-line');
+            this.classList.toggle('ri-eye-off-line');
+        });
+    }
+    if (toggleConfirmPassword) {
+        toggleConfirmPassword.addEventListener('click', function () {
+            const type = confirmPassword.getAttribute('type') === 'password' ? 'text' : 'password';
+            confirmPassword.setAttribute('type', type);
+            this.classList.toggle('ri-eye-line');
+            this.classList.toggle('ri-eye-off-line');
+        });
+    }
+});
+</script>
 
     <!-- GSAP + ScrollTrigger -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
@@ -76,3 +183,4 @@
     <script src="js/animations.js" defer></script>
 </body>
 </html>
+

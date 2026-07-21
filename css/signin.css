@@ -16,13 +16,15 @@
 }
 
 body {
-    height: 100vh;
+    min-height: 100vh;
     background: url("../assets/register_bg.webp") center/cover no-repeat fixed;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
+    padding: 30px 15px;
 }
 
 .overlay {
@@ -38,19 +40,34 @@ body {
     position: relative;
     z-index: 1;
     width: 420px;
+    max-width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
     background: rgba(255, 255, 255, 0.98);
-    padding: 20px 30px;
-    border-radius: 12px;
+    padding: 22px 28px;
+    border-radius: 16px;
     border: 1px solid rgba(248, 126, 10, 0.2);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
     animation: zoomIn 0.8s ease-out;
+}
+
+/* Custom Scrollbar for Signup Box */
+.signup-box::-webkit-scrollbar {
+    width: 5px;
+}
+.signup-box::-webkit-scrollbar-track {
+    background: transparent;
+}
+.signup-box::-webkit-scrollbar-thumb {
+    background: rgba(248, 126, 10, 0.4);
+    border-radius: 10px;
 }
 
 .signup-box h1 {
     color: #2b2b2b;
-    margin-bottom: 15px;
+    margin-bottom: 12px;
     text-align: center;
-    font-size: 26px;
+    font-size: 24px;
     font-weight: 600;
 }
 
@@ -61,13 +78,13 @@ body {
 
 .signup-box input,
 .signup-box select {
-    padding: 10px 15px;
-    margin-bottom: 10px;
+    padding: 9px 14px;
+    margin-bottom: 8px;
     border: 1px solid #e2e8f0;
     background: #f8f9fa;
     color: #2b2b2b;
-    border-radius: 5px;
-    font-size: 14px;
+    border-radius: 6px;
+    font-size: 13.5px;
     transition: all 0.3s ease;
     outline: none;
 }

@@ -509,3 +509,149 @@ body.no-scroll {
     text-overflow: ellipsis;
     display: block;
 }
+
+/* Enhanced Dashboard UI Components */
+.order-tracker-card {
+    background: linear-gradient(135deg, rgba(248, 126, 10, 0.15) 0%, rgba(32, 32, 44, 1) 100%);
+    border: 1px solid rgba(248, 126, 10, 0.3);
+    border-radius: 16px;
+    padding: 22px;
+    margin-bottom: 25px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+}
+
+.tracker-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 18px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tracker-badge {
+    background: #f87e0a;
+    color: white;
+    font-size: 11px;
+    font-weight: 700;
+    padding: 4px 12px;
+    border-radius: 20px;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+    0% { opacity: 1; transform: scale(1); }
+    50% { opacity: 0.85; transform: scale(1.02); }
+    100% { opacity: 1; transform: scale(1); }
+}
+
+.tracker-steps {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    position: relative;
+    margin-top: 15px;
+}
+
+.step-item {
+    text-align: center;
+    position: relative;
+}
+
+.step-dot {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: var(--dash-border);
+    color: var(--dash-text-muted);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 8px;
+    font-weight: 700;
+    font-size: 13px;
+    transition: all 0.3s ease;
+}
+
+.step-item.active .step-dot {
+    background: #1bc5bd;
+    color: white;
+    box-shadow: 0 0 12px rgba(27, 197, 189, 0.4);
+}
+
+.step-item.current .step-dot {
+    background: #f87e0a;
+    color: white;
+    box-shadow: 0 0 15px rgba(248, 126, 10, 0.5);
+}
+
+.step-label {
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--dash-text-muted);
+}
+
+.step-item.active .step-label, .step-item.current .step-label {
+    color: white;
+}
+
+.quick-reorder-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+}
+
+.reorder-card {
+    background: var(--dash-card);
+    border: 1px solid var(--dash-border);
+    border-radius: 12px;
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.reorder-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--dash-accent);
+}
+
+.reorder-btn {
+    background: var(--dash-accent);
+    color: white;
+    border: none;
+    padding: 6px 14px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+.reorder-btn:hover {
+    background: #e06c00;
+}
+
+.coupon-card {
+    background: linear-gradient(135deg, #2563eb 0%, #1d4ed8 100%);
+    border-radius: 12px;
+    padding: 18px;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.coupon-code {
+    background: rgba(255,255,255,0.2);
+    border: 1px dashed white;
+    padding: 4px 12px;
+    border-radius: 6px;
+    font-weight: 800;
+    letter-spacing: 1px;
+}
+

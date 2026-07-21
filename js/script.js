@@ -186,6 +186,56 @@ function handleSignup(event) {
 function sendMessage(event) {
     event.preventDefault();
     const form = event.target;
+    const inputs = form.querySelectorAll('input, textarea');
+    let isValid = true;
+
+    function showError(inputEl, message) {
+        let errorEl = inputEl.nextElementSibling;
+        if (!errorEl || !errorEl.classList.contains('error-text')) {
+            errorEl = document.createElement('div');
+            errorEl.className = 'error-text';
+            errorEl.style.color = '#e74c3c';
+            errorEl.style.fontSize = '12px';
+            errorEl.style.marginTop = '4px';
+            errorEl.style.marginBottom = '0px';
+            errorEl.style.textAlign = 'left';
+            inputEl.parentNode.insertBefore(errorEl, inputEl.nextSibling);
+        }
+        errorEl.textContent = message;
+        errorEl.style.display = 'block';
+    }
+
+    function clearError(inputEl) {
+        let errorEl = inputEl.nextElementSibling;
+        if (errorEl && errorEl.classList.contains('error-text')) {
+            errorEl.style.display = 'none';
+        }
+    }
+
+    inputs.forEach(input => {
+        clearError(input);
+        input.addEventListener('input', () => clearError(input));
+        
+        if (input.type === 'email') {
+            if (!input.value.trim() || !input.value.includes('@')) {
+                showError(input, 'Valid Email Address is required');
+                isValid = false;
+            }
+        } else if (input.tagName.toLowerCase() === 'textarea') {
+            if (!input.value.trim()) {
+                showError(input, 'Message is required');
+                isValid = false;
+            }
+        } else {
+            if (!input.value.trim()) {
+                showError(input, 'Full Name is required');
+                isValid = false;
+            }
+        }
+    });
+
+    if (!isValid) return;
+
     const btn = form.querySelector('button[type="submit"]');
     const originalText = btn.innerText;
 
@@ -195,10 +245,7 @@ function sendMessage(event) {
     showToast('Sending your inquiry...', 'info');
     
     setTimeout(() => {
-        showToast('Message sent! Our team will contact you soon.', 'success');
-        form.reset();
-        btn.innerText = originalText;
-        btn.disabled = false;
+        window.location.href = '404.html';
     }, 1500);
 }
 

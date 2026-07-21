@@ -80,112 +80,204 @@
         </header>
         <div id="tab-overview" class="tab-content active">
             <section class="welcome-sec">
-            <h2>Platform Overview</h2>
-            <p>Real-time analytics for your Stackly food delivery platform.</p>
-        </section>
+                <h2>Platform Overview</h2>
+                <p>Real-time operations & business metrics for Stackly food delivery platform.</p>
+            </section>
 
-        <div class="stats-grid">
-            <div class="stat-card" style="border-top-color: var(--dash-success);">
-                <h3>₹45.2K</h3>
-                <p>Total Revenue</p>
-                <div class="stat-trend">
-                    ↑ 12% from last week
-                </div>
-            </div>
-            <div class="stat-card" style="border-top-color: var(--dash-accent);">
-                <h3>1,245</h3>
-                <p>Total Orders</p>
-                <div class="stat-trend">
-                    ↑ 5% from last week
-                </div>
-            </div>
-            <div class="stat-card" style="border-top-color: var(--dash-warning);">
-                <h3>540</h3>
-                <p>Active Users</p>
-                <div class="stat-trend">
-                      24 new today
-                </div>
+            <!-- Quick Admin Actions -->
+            <div class="quick-actions-bar">
+                <button class="action-btn-pill" onclick="window.location.href='404.html'">📊 Export Analytics CSV</button>
+                <button class="action-btn-pill" onclick="window.location.href='404.html'">⚡ Send Announcement</button>
+                <button class="action-btn-pill" onclick="window.location.href='404.html'">🏷️ Create Flash Voucher</button>
+                <button class="action-btn-pill" onclick="window.location.href='404.html'">🚴 Fleet Dispatcher</button>
             </div>
 
-        </div>
-
-        <div class="section-grid" style="margin-bottom: 25px;">
-            <div class="panel">
-                <h3 style="margin-top: 0; margin-bottom: 20px;">Revenue Overview</h3>
-                <div style="position: relative; height: 300px; width: 100%;">
-                    <canvas id="revenueChart"></canvas>
+            <!-- Operational Pipeline Card -->
+            <div class="ops-pipeline-card">
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <h3 style="margin: 0; font-size: 15px;">Live Order Dispatch Pipeline</h3>
+                    <span style="font-size: 11px; color: var(--dash-success); font-weight: 700;">● System Healthy</span>
                 </div>
-            </div>
-            <div class="panel">
-                <h3 style="margin-top: 0; margin-bottom: 20px;">Order Status Distribution</h3>
-                <div style="position: relative; height: 300px; width: 100%;">
-                    <canvas id="orderPieChart"></canvas>
+                <div class="pipeline-bar-wrapper">
+                    <div class="pipeline-seg" style="width: 10%; background: #ffa800;" title="Order Placed: 15"></div>
+                    <div class="pipeline-seg" style="width: 20%; background: #3699ff;" title="Kitchen Preparing: 28"></div>
+                    <div class="pipeline-seg" style="width: 30%; background: #8b5cf6;" title="Out for Delivery: 42"></div>
+                    <div class="pipeline-seg" style="width: 40%; background: #1bc5bd;" title="Delivered Today: 1,160"></div>
                 </div>
-            </div>
-        </div>
-
-        <div class="section-grid">
-            <div class="panel">
-                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
-                    <h3 style="margin: 0;">Recent Transactions</h3>
-                    <a href="404.html" style="color: var(--dash-accent); text-decoration: none; font-size: 12px; font-weight: 600;">View All</a>
+                <div style="display: flex; justify-content: space-between; font-size: 11px; color: var(--dash-text-muted);">
+                    <span>🟡 Placed (15)</span>
+                    <span>🔵 Preparing (28)</span>
+                    <span>🟣 On Way (42)</span>
+                    <span>🟢 Delivered (1,160)</span>
                 </div>
-                <table class="data-table">
-                    <thead>
-                        <tr>
-                            <th>Order ID</th>
-                            <th>Customer</th>
-                            <th>Amount</th>
-                            <th>Status</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>#ORD-2091</td>
-                            <td>Gaganachukki2000</td>
-                            <td>₹220</td>
-                            <td><span class="status completed">Delivered</span></td>
-                        </tr>
-                        <tr>
-                            <td>#ORD-2092</td>
-                            <td>Priya Gupta</td>
-                            <td>₹450</td>
-                            <td><span class="status pending">Preparing</span></td>
-                        </tr>
-                        <tr>
-                            <td>#ORD-2093</td>
-                            <td>Rahul Sharma</td>
-                            <td>₹180</td>
-                            <td><span class="status pending">On The Way</span></td>
-                        </tr>
-                        <tr>
-                            <td>#ORD-2094</td>
-                            <td>Amit Singh</td>
-                            <td>₹340</td>
-                            <td><span class="status completed">Delivered</span></td>
-                        </tr>
-                    </tbody>
-                </table>
             </div>
 
-            <div class="panel">
-                <h3>Sales Trend (This Week)</h3>
-                <div style="display: flex; align-items: flex-end; justify-content: space-between; height: 180px; padding-bottom: 20px; border-bottom: 1px solid var(--dash-border); margin-top: 20px;">
-                    <div style="height: 40%; width: 25px; background: var(--dash-accent-light); border-radius: 4px; position:relative;"><span style="position:absolute; bottom:-25px; left:-5px; font-size:10px; color:var(--dash-text-muted);">Mon</span></div>
-                    <div style="height: 65%; width: 25px; background: var(--dash-accent-light); border-radius: 4px; position:relative;"><span style="position:absolute; bottom:-25px; left:-5px; font-size:10px; color:var(--dash-text-muted);">Tue</span></div>
-                    <div style="height: 55%; width: 25px; background: var(--dash-accent-light); border-radius: 4px; position:relative;"><span style="position:absolute; bottom:-25px; left:-5px; font-size:10px; color:var(--dash-text-muted);">Wed</span></div>
-                    <div style="height: 85%; width: 25px; background: var(--dash-accent); border-radius: 4px; position:relative;"><span style="position:absolute; bottom:-25px; left:-5px; font-size:10px; color:white; font-weight: 600;">Thu</span></div>
-                    <div style="height: 70%; width: 25px; background: var(--dash-accent-light); border-radius: 4px; position:relative;"><span style="position:absolute; bottom:-25px; left:-5px; font-size:10px; color:var(--dash-text-muted);">Fri</span></div>
-                    <div style="height: 95%; width: 25px; background: var(--dash-accent-light); border-radius: 4px; position:relative;"><span style="position:absolute; bottom:-25px; left:-5px; font-size:10px; color:var(--dash-text-muted);">Sat</span></div>
-                    <div style="height: 60%; width: 25px; background: var(--dash-accent-light); border-radius: 4px; position:relative;"><span style="position:absolute; bottom:-25px; left:-5px; font-size:10px; color:var(--dash-text-muted);">Sun</span></div>
+            <!-- 6 KPI Stat Cards -->
+            <div class="kpi-grid">
+                <div class="stat-card" style="border-top-color: var(--dash-success);">
+                    <h3>₹45.2K</h3>
+                    <p>Total Revenue</p>
+                    <div class="stat-trend">↑ 12% vs last week</div>
+                </div>
+                <div class="stat-card" style="border-top-color: var(--dash-accent);">
+                    <h3>1,245</h3>
+                    <p>Total Orders</p>
+                    <div class="stat-trend">↑ 5% vs last week</div>
+                </div>
+                <div class="stat-card" style="border-top-color: var(--dash-warning);">
+                    <h3>540</h3>
+                    <p>Active Users</p>
+                    <div class="stat-trend">24 new today</div>
+                </div>
+                <div class="stat-card" style="border-top-color: #3699ff;">
+                    <h3>38 Fleet</h3>
+                    <p>Drivers Online</p>
+                    <div class="stat-trend">94% Fleet Active</div>
                 </div>
             </div>
-        </div>
+
+            <!-- Primary Charts Grid -->
+            <div class="section-grid" style="margin-bottom: 25px;">
+                <div class="panel">
+                    <h3 style="margin-top: 0; margin-bottom: 20px;">Daily Revenue Overview (₹)</h3>
+                    <div style="position: relative; height: 280px; width: 100%;">
+                        <canvas id="revenueChart"></canvas>
+                    </div>
+                </div>
+                <div class="panel">
+                    <h3 style="margin-top: 0; margin-bottom: 20px;">Order Status Distribution</h3>
+                    <div style="position: relative; height: 280px; width: 100%;">
+                        <canvas id="orderPieChart"></canvas>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Peak Hours & Demand Leaderboard Grid -->
+            <div class="section-grid" style="margin-bottom: 25px;">
+                <div class="panel">
+                    <h3 style="margin-top: 0; margin-bottom: 20px;">Peak Ordering Hours (Orders / Hour)</h3>
+                    <div style="position: relative; height: 240px; width: 100%;">
+                        <canvas id="peakHoursChart"></canvas>
+                    </div>
+                </div>
+                <div class="panel">
+                    <h3>High Demand Items Today</h3>
+                    <div style="display: flex; flex-direction: column; gap: 14px; margin-top: 15px;">
+                        <div>
+                            <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 4px;">
+                                <span>Chicken Biryani</span>
+                                <span style="color: var(--dash-success); font-weight: 700;">340 Orders</span>
+                            </div>
+                            <div style="height: 6px; background: var(--dash-border); border-radius: 4px; overflow: hidden;">
+                                <div style="width: 85%; height: 100%; background: var(--dash-accent);"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 4px;">
+                                <span>Premium Pepperoni Pizza</span>
+                                <span style="color: var(--dash-success); font-weight: 700;">210 Orders</span>
+                            </div>
+                            <div style="height: 6px; background: var(--dash-border); border-radius: 4px; overflow: hidden;">
+                                <div style="width: 65%; height: 100%; background: #3699ff;"></div>
+                            </div>
+                        </div>
+                        <div>
+                            <div style="display: flex; justify-content: space-between; font-size: 12px; margin-bottom: 4px;">
+                                <span>Masala Dosa Special</span>
+                                <span style="color: var(--dash-success); font-weight: 700;">180 Orders</span>
+                            </div>
+                            <div style="height: 6px; background: var(--dash-border); border-radius: 4px; overflow: hidden;">
+                                <div style="width: 50%; height: 100%; background: #1bc5bd;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Recent Transactions & Partner Performance -->
+            <div class="section-grid">
+                <div class="panel">
+                    <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px;">
+                        <h3 style="margin: 0;">Recent Transactions</h3>
+                        <a href="404.html" style="color: var(--dash-accent); text-decoration: none; font-size: 12px; font-weight: 600;">View All</a>
+                    </div>
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>#ORD-2091</td>
+                                <td>Gaganachukki2000</td>
+                                <td>₹220</td>
+                                <td><span class="status completed">Delivered</span></td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-2092</td>
+                                <td>Priya Gupta</td>
+                                <td>₹450</td>
+                                <td><span class="status pending">Preparing</span></td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-2093</td>
+                                <td>Rahul Sharma</td>
+                                <td>₹180</td>
+                                <td><span class="status pending">On The Way</span></td>
+                            </tr>
+                            <tr>
+                                <td>#ORD-2094</td>
+                                <td>Amit Singh</td>
+                                <td>₹340</td>
+                                <td><span class="status completed">Delivered</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="panel">
+                    <h3>Top Partner Restaurants</h3>
+                    <table class="data-table">
+                        <thead>
+                            <tr><th>Restaurant</th><th>Orders</th><th>Rating</th></tr>
+                        </thead>
+                        <tbody>
+                            <tr><td>Spicy Grill</td><td>412</td><td>4.9 ⭐</td></tr>
+                            <tr><td>Pizza Hub</td><td>320</td><td>4.7 ⭐</td></tr>
+                            <tr><td>Curry Palace</td><td>285</td><td>4.8 ⭐</td></tr>
+                            <tr><td>Burger Zone</td><td>190</td><td>4.6 ⭐</td></tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
 
         <div id="tab-orders" class="tab-content">
 
             <section class="welcome-sec"><h2>Orders Management</h2><p>View and manage all customer orders.</p></section>
+            
+            <div class="stats-grid" style="margin-bottom: 25px;">
+                <div class="stat-card" style="border-top-color: var(--dash-warning);">
+                    <h3>15</h3>
+                    <p>Pending Orders</p>
+                    <div class="stat-trend down">Action Required</div>
+                </div>
+                <div class="stat-card" style="border-top-color: var(--dash-accent);">
+                    <h3>42</h3>
+                    <p>In Transit</p>
+                    <div class="stat-trend">Out for delivery</div>
+                </div>
+                <div class="stat-card" style="border-top-color: var(--dash-success);">
+                    <h3>1,208</h3>
+                    <p>Delivered Today</p>
+                    <div class="stat-trend">↑ 8% vs yesterday</div>
+                </div>
+            </div>
+
             <div class="panel" style="margin-bottom: 25px;">
                 <h3>Live Orders (Action Required)</h3>
                 <table class="data-table">
@@ -293,10 +385,28 @@
         <div id="tab-analytics" class="tab-content">
 
             <section class="welcome-sec"><h2>System Analytics</h2><p>Deep dive into platform performance.</p></section>
+            <div class="stats-grid">
+                <div class="stat-card" style="border-top-color: #8b5cf6;">
+                    <h3>₹345</h3>
+                    <p>Avg Order Value</p>
+                    <div class="stat-trend">↑ 2.5% this month</div>
+                </div>
+                <div class="stat-card" style="border-top-color: #10b981;">
+                    <h3>78%</h3>
+                    <p>Retention Rate</p>
+                    <div class="stat-trend">↑ 4% this month</div>
+                </div>
+                <div class="stat-card" style="border-top-color: #f59e0b;">
+                    <h3>32 min</h3>
+                    <p>Avg Delivery Time</p>
+                    <div class="stat-trend down">↓ 3 mins faster</div>
+                </div>
+            </div>
+
             <div class="panel" style="margin-bottom: 25px;">
                 <h3>Revenue Trends (Last 7 Days)</h3>
-                <div style="height: 150px; background: var(--dash-bg); border: 1px dashed var(--dash-border); border-radius: 8px; display: flex; align-items: center; justify-content: center; color: var(--dash-text-muted);">
-                    [ Chart Placeholder: Bar graph showing daily revenue ]
+                <div style="position: relative; height: 300px; width: 100%;">
+                    <canvas id="dailyRevenueChart"></canvas>
                 </div>
             </div>
             <div class="panel" style="margin-bottom: 25px;">
@@ -454,6 +564,65 @@
             }
         });
 
+        // Peak Ordering Hours Line Chart
+        const peakHoursCtx = document.getElementById('peakHoursChart');
+        if (peakHoursCtx) {
+            new Chart(peakHoursCtx.getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: ['8 AM', '10 AM', '12 PM', '2 PM', '4 PM', '6 PM', '8 PM', '10 PM'],
+                    datasets: [{
+                        label: 'Orders',
+                        data: [25, 45, 140, 95, 60, 180, 290, 130],
+                        borderColor: '#f87e0a',
+                        backgroundColor: 'rgba(248, 126, 10, 0.12)',
+                        borderWidth: 3,
+                        fill: true,
+                        tension: 0.4,
+                        pointBackgroundColor: '#f87e0a'
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.05)' } },
+                        x: { grid: { display: false } }
+                    },
+                    plugins: { legend: { display: false } }
+                }
+            });
+        }
+
+        // Admin Daily Revenue Line Chart (Analytics Tab)
+        const dailyRevCtx = document.getElementById('dailyRevenueChart');
+        if (dailyRevCtx) {
+            new Chart(dailyRevCtx.getContext('2d'), {
+                type: 'line',
+                data: {
+                    labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                    datasets: [{
+                        label: 'Revenue (₹)',
+                        data: [1500, 2200, 1800, 3100, 4200, 5600, 4800],
+                        borderColor: '#8b5cf6',
+                        backgroundColor: 'rgba(139, 92, 246, 0.1)',
+                        borderWidth: 2,
+                        fill: true,
+                        tension: 0.4
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    scales: {
+                        y: { beginAtZero: true, grid: { color: 'rgba(255,255,255,0.05)' } },
+                        x: { grid: { display: false } }
+                    },
+                    plugins: { legend: { display: false } }
+                }
+            });
+        }
+
         function switchTab(tabId, element) {
             document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
             document.querySelectorAll('.sidebar-menu a').forEach(el => el.classList.remove('active'));
@@ -517,3 +686,4 @@
     </script>
 </body>
 </html>
+
